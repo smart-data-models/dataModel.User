@@ -1,0 +1,2 @@
+"id", "type", "description__value", "refTarget__value", "activityType__value", "dateActivityStarted__value", "refAgent__value", "refObject__value"
+"UserActivity1", "UserActivity", "User1 drive Car1 to Office1", "Office1", "Drive", "2016-11-30T07:00:00.00Z", "User1", "Car1"

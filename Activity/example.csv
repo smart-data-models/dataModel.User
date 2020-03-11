@@ -1,0 +1,2 @@
+"id", "type", "activityType", "description", "dateActivityStarted", "refObject", "refTarget", "refAgent"
+"UserActivity1", "UserActivity", "Drive", "User1 drive Car1 to Office1", "2016-11-30T07:00:00.00Z", "Car1", "Office1", "User1"
