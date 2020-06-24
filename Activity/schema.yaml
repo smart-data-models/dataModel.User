@@ -1,5 +1,8 @@
 Activity:
   required:
+    - activityType
+    - refAgent
+    - type
     - id
   allOf:
     - $ref: >-
@@ -12,3 +15,61 @@ Activity:
 
     The model represents user activities using the following predicate structure: (Agent, Verb, Object*, Target*), where Object and Target are optional.
     The Agent is identified by the attribute refAgent, the Verb is identified by activityType, the Object is identified by refObject, and the Target is identified by refTarget.
+  properties:
+    activityType:
+      x-ngsi:
+        type: Property
+        model: 'https://schema.org/Text'
+      type: string
+      description: ''
+    alternateName:
+      x-ngsi:
+        type: Property
+        model: 'https://schema.org/Text'
+      type: string
+      description: ''
+    dataProvider:
+      x-ngsi:
+        type: Property
+        model: 'https://schema.org/Text'
+      type: string
+      description: ''
+    dateActivityEnded:
+      x-ngsi:
+        type: Property
+        model: 'https://schema.org/DateTime'
+      type: string
+      description: ''
+      format: date-time
+    dateActivityStarted:
+      x-ngsi:
+        type: Property
+        model: 'https://schema.org/DateTime'
+      type: string
+      description: ''
+      format: date-time
+    description:
+      $ref: >-
+        https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/description
+    name:
+      $ref: >-
+        https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/name
+    owner:
+      x-ngsi:
+        type: Property
+      type: array
+      description: ''
+      items:
+        anyOf:
+          - type: string
+            minLength: 1
+            maxLength: 256
+            pattern: '^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$'
+          - type: string
+            format: uri
+    source:
+      x-ngsi:
+        type: Property
+        model: 'https://schema.org/Text'
+      type: string
+      description: ''
