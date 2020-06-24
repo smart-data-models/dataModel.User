@@ -40,14 +40,14 @@ Activity:
         type: Property
         model: 'https://schema.org/DateTime'
       type: string
-      description: 'Activity's end timestamp.'
+      description: "Activity's end timestamp."
       format: date-time
     dateActivityStarted:
       x-ngsi:
         type: Property
         model: 'https://schema.org/DateTime'
       type: string
-      description: 'Activity's start timestamp.'
+      description: "Activity's start timestamp."
       format: date-time
     description:
       $ref: >-
