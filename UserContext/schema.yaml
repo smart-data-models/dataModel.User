@@ -34,7 +34,8 @@ UserContext:
       "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/name
     owner:
       x-ngsi:
-        type: Property
+        type: Relationship
+        model: https://schema.org/URL  
       type: array
       description: ''
       items:
@@ -48,18 +49,21 @@ UserContext:
     refActivity:
       x-ngsi:
         type: Relationship
+        model: https://schema.org/URL
       description: 'An object representing the current activity performed by the User'
       type: string
       format: uri
     refUserDevice:
       x-ngsi:
         type: Relationship
+        model: https://schema.org/URL
       description: 'An object representing the current device used by the User.'
       type: string
       format: uri
     refUser:
       x-ngsi:
         type: Relationship
+        model: https://schema.org/URL
       description: 'reference to the (anonymised) User to which this UserContext is associated.'
       type: string
       format: uri
