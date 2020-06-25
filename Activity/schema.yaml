@@ -23,18 +23,11 @@ Activity:
       type: string
       description: 'The action performed (e.g. Drive).'
     alternateName:
-      x-ngsi:
-        type: Property
-        model: 'https://schema.org/Text'
-      type: string
-      description: ''
+      $ref: >-
+        https://raw.githubusercontent.com/smart-data-models/data-models/master/schema.org.yaml#/alternateName
     dataProvider:
-      x-ngsi:
-        type: Property
-        model: 'https://schema.org/Text'
-      type: string
-      format: uri
-      description: 'Specifies the URL to information about the provider of this information'
+      $ref: >-
+        https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/dataProvider
     dateActivityEnded:
       x-ngsi:
         type: Property
@@ -56,19 +49,7 @@ Activity:
       $ref: >-
         https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/name
     owner:
-      x-ngsi:
-        type: Relationship
-        model: https://schema.org/URL  
-      type: array
-      description: ''
-      items:
-        anyOf:
-          - type: string
-            minLength: 1
-            maxLength: 256
-            pattern: '^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$'
-          - type: string
-            format: uri
+      $ref: https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/owner
     refAgent:
       x-ngsi:
         type: Relationship

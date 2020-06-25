@@ -21,11 +21,8 @@ UserContext:
       type: string
       description: ''
     dataProvider:
-      x-ngsi:
-        type: Property
-        model: https://schema.org/Text
-      type: string
-      description: 'Specifies the URL to information about the provider of this information'
+      $ref: >-
+        https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/dataProvider
     description:
       "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/description
     location:
@@ -33,19 +30,7 @@ UserContext:
     name:
       "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/name
     owner:
-      x-ngsi:
-        type: Relationship
-        model: https://schema.org/URL  
-      type: array
-      description: ''
-      items:
-        anyOf:
-        - type: string
-          minLength: 1
-          maxLength: 256
-          pattern: "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$"
-        - type: string
-          format: uri
+      $ref: https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/owner
     refActivity:
       x-ngsi:
         type: Relationship
@@ -68,8 +53,5 @@ UserContext:
       type: string
       format: uri
     source:
-      x-ngsi:
-        type: Property
-        model: https://schema.org/Text
-      type: string
-      description: 'A sequence of characters giving the source of the entity data.'
+      $ref: >-
+        https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/source
