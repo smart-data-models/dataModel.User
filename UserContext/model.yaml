@@ -1,13 +1,13 @@
 UserContext:
   allOf:
-  - "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/Common
+  - "$ref": https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/Common
   type: object
   description: |
     This data model describe the Context of a User. No personal data is encoded in the model. The actual
     User data are stored in a different end point, as identified by the refUser property..
   properties:
     address:
-      "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/schema.org.yaml#/address
+      "$ref": https://smart-data-models.github.io/data-models/schema.org.yaml#/address
     alternateName:
       x-ngsi:
         type: Property
@@ -22,15 +22,15 @@ UserContext:
       description: ''
     dataProvider:
       $ref: >-
-        https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/dataProvider
+        https://smart-data-models.github.io/data-models/fiware-terms.yaml#/dataProvider
     description:
-      "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/description
+      "$ref": https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/description
     location:
-      "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/location
+      "$ref": https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/location
     name:
-      "$ref": https://raw.githubusercontent.com/smart-data-models/data-models/master/ngsi-ld.yaml#/name
+      "$ref": https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name
     owner:
-      $ref: https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/owner
+      $ref: https://smart-data-models.github.io/data-models/fiware-terms.yaml#/owner
     refActivity:
       x-ngsi:
         type: Relationship
@@ -54,4 +54,4 @@ UserContext:
       format: uri
     source:
       $ref: >-
-        https://raw.githubusercontent.com/smart-data-models/data-models/master/fiware-terms.yaml#/source
+        https://smart-data-models.github.io/data-models/fiware-terms.yaml#/source

@@ -2,7 +2,7 @@
 components: 
   schemas: 
     Activity: 
-      $ref: "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/Activity/schema.yaml#/Activity"
+      $ref: "https://smart-data-models.github.io/dataModel.User/Activity/model.yaml#/Activity"
 info: 
   description: |
     This entity represents the current activity performed by a User. It can be used in different scenarios,
@@ -39,12 +39,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/Activity/example.json"
+                      $ref: "https://smart-data-models.github.io/dataModel.User/Activity/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/Activity/example-normalized-ld.jsonld"
+                      $ref: "https://smart-data-models.github.io/dataModel.User/Activity/example-normalized-ld.jsonld"
           description: OK
       tags: 
         - ngsi-ld
