@@ -1,23 +1,23 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$schemaVersion": "0.0",
-  "$id": "https://fiware.github.io/data-models/specs/User/UserContext/schema.json",
-  "title": "FIWARE - User Context schema",
+  "$id": "https://smart-data-models.github.io/dataModel.User/UserContext/schema.json",
+  "title": "Smart Data Models. User Context schema",
   "description": "Information on the context of an anonymized in a given point in time",
   "type": "object",
   "allOf": [
     {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
     },
     {
-      "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
     },
     {
       "properties": {
         "refActivity": {
           "oneOf": [
             {
-              "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
             },
             {
               "type": "string",
@@ -28,7 +28,7 @@
         "refUserDevice": {
           "oneOf": [
             {
-              "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
             },
             {
               "type": "string",
@@ -39,7 +39,7 @@
         "refUser": {
           "oneOf": [
             {
-              "$ref": "https://fiware.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
             },
             {
               "type": "string",
