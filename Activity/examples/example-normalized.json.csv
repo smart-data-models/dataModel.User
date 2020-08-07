@@ -1,0 +1,2 @@
+"id_", "type_", "description__value_", "refTarget__type_", "refTarget__value_", "activityType__value_", "dateActivityStarted__type_", "dateActivityStarted__value_", "refAgent__type_", "refAgent__value_", "refObject__type_", "refObject__value_"
+"UserActivity1", "UserActivity", "User1 drive Car1 to Office1", "Relationship", "Office1", "Drive", "DateTime", "2016-11-30T07:00:00.00Z", "Relationship", "User1", "Relationship", "Car1"
