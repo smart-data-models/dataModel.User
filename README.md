@@ -16,3 +16,4 @@ User data are stored in a different end point, as identified by the refUser prop
 
 You can raise an [issue](https://github.com/smart-data-models/dataModel.User/issues) or submit your [PR](https://github.com/smart-data-models/dataModel.User/pulls) on existing data models
 
+
