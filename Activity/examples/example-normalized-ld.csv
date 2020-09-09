@@ -1,2 +1,0 @@
-"id", "type", "description__value", "refTarget__object", "activityType__value", "dateActivityStarted__value__@type", "dateActivityStarted__value__@value", "refAgent__object", "refObject__object", "@context"
-"urn:ngsi-ld:UserActivity:UserActivity1", "UserActivity", "User1 drive Car1 to Office1", "urn:ngsi-ld:Target:Office1", "Drive", "DateTime", "2016-11-30T07:00:00.00Z", "urn:ngsi-ld:Agent:User1", "urn:ngsi-ld:Object:Car1", "['https://schema.lab.fiware.org/ld/context', 'https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld']"
