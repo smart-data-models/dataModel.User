@@ -1,0 +1,8 @@
+{"@context": ["https://schema.lab.fiware.org/ld/context",
+              "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"],
+ "id": "urn:ngsi-ld:UserContext:UserContext1",
+ "location": {"coordinates": [-4.754444444, 41.640833333], "type": "Point"},
+ "refActivity": "urn:ngsi-ld:Activity:UserActivity1",
+ "refUser": "urn:ngsi-ld:User:User1",
+ "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",
+ "type": "UserContext"}
