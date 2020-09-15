@@ -9,7 +9,7 @@ User data are stored in a different end point, as identified by the refUser prop
 
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.User/UserContext/swagger.yaml)
 
-Link to the [specification](https://smart-data-models.github.io/dataModel.User/UserContext/doc/spec.md)
+Link to the [specification](https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/doc/spec.md)
 ### Examples
 
 Link to the [example](https://smart-data-models.github.io/dataModel.User/UserContext/examples/example.json) (keyvalues) for NGSI v2
