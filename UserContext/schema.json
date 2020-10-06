@@ -15,7 +15,7 @@
     {
       "properties": {
         "refActivity": {
-          "oneOf": [
+          "anyOf": [
             {
               "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
             },
@@ -26,7 +26,7 @@
           ]
         },
         "refUserDevice": {
-          "oneOf": [
+          "anyOf": [
             {
               "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
             },
@@ -37,7 +37,7 @@
           ]
         },
         "refUser": {
-          "oneOf": [
+          "anyOf": [
             {
               "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
             },
