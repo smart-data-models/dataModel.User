@@ -55,15 +55,5 @@
       }
     }
   ],
-  "anyOf": [
-    {
-      "required": ["id", "type", "location", "refUser"]
-    },
-    {
-      "required": ["id", "type", "address", "refUser"]
-    },
-    {
-      "required": ["id", "type", "refActivity", "refUser"]
-    }
-  ]
+  "required": ["id", "type"]
 }
