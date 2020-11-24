@@ -251,7 +251,7 @@ UserContext:
     - type    
   type: object    
 ```  
-Voici un exemple de contexte utilisateur en format JSON comme valeurs clés. Il est compatible avec NGSI V2 lorsqu'il utilise "options=keyValues" et renvoie les données de contexte d'une entité individuelle.  
+Voici un exemple de contexte utilisateur au format JSON en tant que valeurs clés. Il est compatible avec NGSI V2 lorsqu'il utilise "options=keyValues" et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
   "id": "UserContext1",  
