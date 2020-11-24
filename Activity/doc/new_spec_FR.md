@@ -106,7 +106,7 @@ Activity:
   "refAgent": "User1"  
 }  
 ```  
-Voici un exemple d'activité au format JSON normalisé. Il est compatible avec la version 2 du NGSI lorsque l'on utilise "options=valeurs clés" et renvoie les données de contexte d'une entité individuelle.  
+Voici un exemple d'activité au format JSON normalisé. Ce format est compatible avec la version 2 de l'INSG lorsqu'il utilise "options=valeurs clés" et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
   "id": "UserActivity1",  
