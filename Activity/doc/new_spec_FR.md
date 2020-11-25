@@ -5,9 +5,10 @@ Entité : Activité :
 
 ## Liste des biens  
 
-`activityType`:   `alternateName`: Un autre nom pour cet article  `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  `dateActivityEnded`:   `dateActivityStarted`:   `dateCreated`: Horodatage de la création de l'entité. Il est généralement attribué par la plate-forme de stockage.  `dateModified`: Horodatage de la dernière modification de l'entité. Il est généralement attribué par la plate-forme de stockage.  `description`: Une description de cet article  `id`:   `name`: Le nom de cet article.  `owner`: Une liste contenant une séquence de caractères codés en JSON faisant référence aux Ids uniques du ou des propriétaires  `refAgent`:   `refObject`:   `refTarget`:   `seeAlso`:   `source`: Une séquence de caractères donnant comme URL la source originale des données de l'entité. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source, ou l'URL de l'objet source.  `type`: NGSI Type d'entité  ## Modèle de données description des biens  
-Classement par ordre alphabétique  
-```yaml  
+- `activityType`:   - `alternateName`: Un autre nom pour cet article  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateActivityEnded`:   - `dateActivityStarted`:   - `dateCreated`: Horodatage de la création de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `description`: Une description de cet article  - `id`:   - `name`: Le nom de cet article.  - `owner`: Une liste contenant une séquence de caractères codés en JSON faisant référence aux Ids uniques du ou des propriétaires  - `refAgent`:   - `refObject`:   - `refTarget`:   - `seeAlso`:   - `source`: Une séquence de caractères donnant comme URL la source originale des données de l'entité. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source, ou l'URL de l'objet source.  - `type`: NGSI Type d'entité  ## Modèle de données description des biens  
+Classement par ordre alphabétique (cliquez pour plus de détails)  
+<details><summary><strong>full yaml details</strong></summary>    
+```yaml  
 Activity:    
   description: 'Information on the current activity performed by an anonymized user in a given point in time'    
   properties:    
@@ -93,6 +94,9 @@ Activity:
     - id    
   type: object    
 ```  
+</details>    
+## Exemples de charges utiles  
+#### Activité NGSI V2 valeurs clés Exemple  
 Voici un exemple d'activité au format JSON comme valeurs clés. Ce format est compatible avec la version 2 de l'INSG lorsqu'il utilise "options=valeurs clés" et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
@@ -106,6 +110,7 @@ Activity:
   "refAgent": "User1"  
 }  
 ```  
+#### Activité NGSI V2 normalisée Exemple  
 Voici un exemple d'activité au format JSON normalisé. Ce format est compatible avec la version 2 de l'INSG lorsqu'il utilise "options=valeurs clés" et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
@@ -135,6 +140,7 @@ Activity:
   }  
 }  
 ```  
+#### Activité NGSI-LD valeurs clés Exemple  
 Voici un exemple d'activité au format JSON-LD comme valeurs clés. Ce format est compatible avec le format JSON-LD lorsqu'il n'utilise pas d'options et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {"@context": ["https://schema.lab.fiware.org/ld/context",  
@@ -149,6 +155,7 @@ Activity:
  "refTarget": "urn:ngsi-ld:Target:Office1",  
  "type": "UserActivity"}  
 ```  
+#### Activité NGSI-LD normalisée Exemple  
 Voici un exemple d'une activité au format JSON-LD telle que normalisée. Ce format est compatible avec JSON-LD lorsqu'il n'utilise pas d'options et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
