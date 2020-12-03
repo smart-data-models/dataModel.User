@@ -224,10 +224,10 @@ UserContext:
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
-      description: ""    
+      description: 'An object representing the current activity performed by the User.'    
       type: Relationship    
       x-ngsi:    
-        model: 'https://schema.org/DateTime.An object representing the current activity performed by the User.'    
+        model: https://schema.org/DateTime    
     refUser:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
