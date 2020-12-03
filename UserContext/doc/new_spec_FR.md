@@ -5,7 +5,11 @@ Entité : UserContext
 
 ## Liste des biens  
 
-- `address`: L'adresse postale.  - `alternateName`: Un autre nom pour cet article  - `areaServed`: La zone géographique où un service ou un article offert est fourni.  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `description`: Une description de cet article  - `id`:   - `location`:   - `name`: Le nom de cet article.  - `owner`: Une liste contenant une séquence de caractères codés en JSON faisant référence aux Ids uniques du ou des propriétaires  - `refActivity`:   - `refUser`:   - `refUserDevice`:   - `seeAlso`:   - `source`: Une séquence de caractères donnant comme URL la source originale des données de l'entité. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source, ou l'URL de l'objet source.  - `type`: NGSI Type d'entité  ## Modèle de données description des biens  
+- `address`: L'adresse postale.  - `alternateName`: Un autre nom pour cet article  - `areaServed`: La zone géographique où un service ou un article offert est fourni.  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `description`: Une description de cet article  - `id`:   - `location`:   - `name`: Le nom de cet article.  - `owner`: Une liste contenant une séquence de caractères codés en JSON faisant référence aux Ids uniques du ou des propriétaires  - `refActivity`: Un objet représentant l'activité courante effectuée par l'utilisateur.  - `refUser`: Référence à l'utilisateur (anonymisé) auquel ce contexte utilisateur est associé. Références normatives : [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un objet représentant le dispositif actuel utilisé par l'utilisateur.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur le sujet  - `source`: Une séquence de caractères donnant comme URL la source originale des données de l'entité. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source, ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il s'agit de UserContext    
+Propriétés requises  
+- `id`  - `type`    
+Ce modèle de données décrit le contexte d'un utilisateur. Aucune donnée personnelle n'est encodée dans le modèle. Les données réelles de l'utilisateur sont stockées dans un point final différent, identifié par la propriété "refUser".  
+## Modèle de données description des biens  
 Classement par ordre alphabétique (cliquez pour plus de détails)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
@@ -220,17 +224,28 @@ UserContext:
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
+      description: 'An object representing the current activity performed by the User.'    
+      type: Relationship    
+      x-ngsi:    
+        model: https://schema.org/DateTime    
     refUser:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
+      description: 'Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)'    
+      type: Relationship    
+      x-ngsi:    
+        model: https://schema.org/URL    
     refUserDevice:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
+      description: 'An object representing the current device used by the User.'    
+      type: Relationship    
     seeAlso:    
+      description: 'list of uri pointing to additional resources about the item'    
       oneOf:    
         - items:    
             - format: uri    
@@ -239,14 +254,15 @@ UserContext:
           type: array    
         - format: uri    
           type: string    
+      type: Property    
     source:    
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'    
       type: Property    
     type:    
-      description: 'NGSI Entity type'    
+      description: 'NGSI Entity type. It as to be UserContext'    
       enum:    
         - UserContext    
-      type: string    
+      type: Property    
   required:    
     - id    
     - type    
@@ -255,7 +271,7 @@ UserContext:
 </details>    
 ## Exemples de charges utiles  
 #### UserContext NGSI V2 valeurs clés Exemple  
-Voici un exemple de contexte utilisateur en format JSON comme valeurs clés. Il est compatible avec NGSI V2 lorsqu'il utilise "options=keyValues" et renvoie les données de contexte d'une entité individuelle.  
+Voici un exemple de contexte utilisateur au format JSON en tant que valeurs clés. Il est compatible avec NGSI V2 lorsqu'il utilise "options=keyValues" et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
   "id": "UserContext1",  
@@ -270,7 +286,7 @@ UserContext:
 }  
 ```  
 #### UserContext NGSI V2 normalisé Exemple  
-Voici un exemple de contexte utilisateur au format JSON tel que normalisé. Il est compatible avec NGSI V2 lorsque l'on utilise "options=keyValues" et renvoie les données de contexte d'une entité individuelle.  
+Voici un exemple de contexte utilisateur au format JSON tel que normalisé. Ce format est compatible avec la version 2 du NGSI lorsqu'il n'utilise pas d'options et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {  
   "id": "UserContext1",  
@@ -297,7 +313,7 @@ UserContext:
 }  
 ```  
 #### UserContext NGSI-LD valeurs clés Exemple  
-Voici un exemple de contexte utilisateur au format JSON-LD comme valeurs clés. Ce format est compatible avec le format JSON-LD lorsqu'il n'utilise pas d'options et renvoie les données de contexte d'une entité individuelle.  
+Voici un exemple de contexte utilisateur au format JSON-LD comme valeurs clés. Il est compatible avec le format NGSI-LD lorsqu'il utilise "options=keyValues" et renvoie les données de contexte d'une entité individuelle.  
 ```json  
 {"@context": ["https://schema.lab.fiware.org/ld/context",  
               "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"],  
