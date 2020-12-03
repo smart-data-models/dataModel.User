@@ -15,7 +15,7 @@
     {
       "properties": {
         "refActivity": {
-          "description": "Relationship. Model:'https://schema.org/DateTime'. An object representing the current activity performed by the User.",
+          "description": "Relationship. Model:'https://schema.org/URL'. An object representing the current activity performed by the User.",
           "anyOf": [
             {
               "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
@@ -27,7 +27,7 @@
           ]
         },
         "refUserDevice": {
-          "description": "Relationship. An object representing the current device used by the User.",
+          "description": "Relationship. Model:'https://schema.org/URL'. An object representing the current device used by the User.",
           "anyOf": [
             {
               "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
