@@ -212,7 +212,7 @@ UserContext:
       description: 'An object representing the current activity performed by the User.'
       type: Relationship
       x-ngsi:
-        model: https://schema.org/DateTime
+        model: https://schema.org/URL
     refUser:
       anyOf:
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof
@@ -229,6 +229,8 @@ UserContext:
           type: string
       description: 'An object representing the current device used by the User.'
       type: Relationship
+      x-ngsi:
+        model: https://schema.org/URL
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
