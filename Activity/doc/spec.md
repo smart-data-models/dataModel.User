@@ -22,7 +22,7 @@ A JSON Schema corresponding to this data model can be found
 
 -   `id` : Unique identifier.
 
--   `type` : Entity type. It must be equal to `UserActivity`.
+-   `type` : Entity type. 
 
 -   `source` : A sequence of characters giving the source of the entity data.
 
