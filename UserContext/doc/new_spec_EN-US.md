@@ -5,9 +5,11 @@ Entity: UserContext
 
 ## List of properties  
 
-- `address`: The mailing address.  - `alternateName`: An alternative name for this item  - `areaServed`: The geographic area where a service or offered item is provided.  - `dataProvider`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCreated`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description`: A description of this item  - `id`:   - `location`:   - `name`: The name of this item.  - `owner`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `refActivity`:   - `refUser`:   - `refUserDevice`:   - `seeAlso`:   - `source`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `type`: NGSI Entity type    
+- `address`: The mailing address.  - `alternateName`: An alternative name for this item  - `areaServed`: The geographic area where a service or offered item is provided.  - `dataProvider`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCreated`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description`: A description of this item  - `id`:   - `location`:   - `name`: The name of this item.  - `owner`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `refActivity`:   - `refUser`: Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: An object representing the current device used by the User.  - `seeAlso`: list of uri pointing to additional resources about the item  - `source`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `type`: NGSI Entity type. It as to be UserContext    
 Required properties  
-- `id`  - `type`  ## Data Model description of properties  
+- `id`  - `type`    
+This data model describe the Context of a User. No personal data is encoded in the model. The actual User data are stored in a different end point, as identified by the `refUser` property.  
+## Data Model description of properties  
 Sorted alphabetically (click for details)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
@@ -222,17 +224,28 @@ UserContext:
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
+      description: ""    
+      type: Relationship    
+      x-ngsi:    
+        model: 'https://schema.org/DateTime.An object representing the current activity performed by the User.'    
     refUser:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
+      description: 'Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)'    
+      type: Relationship    
+      x-ngsi:    
+        model: https://schema.org/URL    
     refUserDevice:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
         - format: uri    
           type: string    
+      description: 'An object representing the current device used by the User.'    
+      type: Relationship    
     seeAlso:    
+      description: 'list of uri pointing to additional resources about the item'    
       oneOf:    
         - items:    
             - format: uri    
@@ -241,14 +254,15 @@ UserContext:
           type: array    
         - format: uri    
           type: string    
+      type: Property    
     source:    
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'    
       type: Property    
     type:    
-      description: 'NGSI Entity type'    
+      description: 'NGSI Entity type. It as to be UserContext'    
       enum:    
         - UserContext    
-      type: string    
+      type: Property    
   required:    
     - id    
     - type    
