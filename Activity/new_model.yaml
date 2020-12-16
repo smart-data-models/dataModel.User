@@ -43,6 +43,8 @@ Activity:
         - description: 'Property. Identifier format of any NGSI entity'
           format: uri
           type: string
+      description: 'Unique identifier of the entity'
+      type: Property
     name:
       description: 'The name of this item.'
       type: Property
@@ -50,10 +52,12 @@ Activity:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *activity_-_properties_-_owner_-_items_-_anyof
+        description: 'Property. Unique identifier of the entity'
       type: Property
     refAgent:
       anyOf:
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof
+          description: 'Property. Unique identifier of the entity'
         - format: uri
           type: string
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'
@@ -77,6 +81,7 @@ Activity:
     refTarget:
       anyOf:
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof
+          description: 'Property. Unique identifier of the entity'
         - format: uri
           type: string
       description: 'Reference to the target of the action (e.g. Office1).'
