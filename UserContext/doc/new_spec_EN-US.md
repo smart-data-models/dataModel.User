@@ -1,6 +1,6 @@
 Entity: UserContext  
 ===================  
-[Open License](https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/UserContext/LICENSE.md)  
+[Open License](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
 Global description: **Information on the context of an anonymized in a given point in time**  
 
 ## List of properties  
