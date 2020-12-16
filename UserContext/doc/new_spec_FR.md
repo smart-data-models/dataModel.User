@@ -1,11 +1,11 @@
 Entité : UserContext  
 ====================  
-Cette spécification est une **version temporelle**. Elle est générée automatiquement à partir des propriétés documentées décrites dans le schema.json condensé dans le fichier `model.yaml`. Un fichier temporaire `nouveau_modèle.yaml` a été créé dans chaque modèle de données pour éviter d'avoir un impact sur les scripts existants. Ainsi, la spécification sera incomplète tant que le fichier schema.json n'est pas mis à jour au nouveau format (documentation des propriétés). Une fois mis à jour, le fichier `model.yaml` (`nouveau_model.yaml`) doit être mis à jour également (automatiquement) . Plus d'informations dans ce [lien](https://github.com/smart-data-models/data-models/blob/master/specs/warning_message_new_spec.md). Tant qu'il s'agit d'un format provisoire, tout [feedback est le bienvenu dans ce formulaire](https://smartdatamodels.org/index.php/submit-an-issue-2/) en choisissant l'option "Feedback sur la nouvelle spécification".  
+[Licence ouverte](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
 Description globale : **Information sur le contexte d'un anonymat à un moment donné**  
 
 ## Liste des biens  
 
-- `address`: L'adresse postale.  - `alternateName`: Un autre nom pour cet article  - `areaServed`: La zone géographique où un service ou un article offert est fourni.  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `description`: Une description de cet article  - `id`:   - `location`:   - `name`: Le nom de cet article.  - `owner`: Une liste contenant une séquence de caractères codés en JSON faisant référence aux Ids uniques du ou des propriétaires  - `refActivity`: Un objet représentant l'activité courante effectuée par l'utilisateur.  - `refUser`: Référence à l'utilisateur (anonymisé) auquel ce contexte utilisateur est associé. Références normatives : [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un objet représentant le dispositif actuel utilisé par l'utilisateur.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur le sujet  - `source`: Une séquence de caractères donnant comme URL la source originale des données de l'entité. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source, ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il s'agit de UserContext    
+- `address`: L'adresse postale.  - `alternateName`: Un autre nom pour cet article  - `areaServed`: La zone géographique où un service ou un article offert est fourni  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il est généralement attribué par la plate-forme de stockage.  - `description`: Une description de cet article  - `id`: Identifiant unique de l'entité  - `location`:   - `name`: Le nom de cet article.  - `owner`: Une liste contenant une séquence de caractères codés en JSON faisant référence aux Ids uniques du ou des propriétaires  - `refActivity`: Un objet représentant l'activité courante effectuée par l'utilisateur.  - `refUser`: Référence à l'utilisateur (anonymisé) auquel ce contexte utilisateur est associé. Références normatives : [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un objet représentant le dispositif actuel utilisé par l'utilisateur.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur le sujet  - `source`: Une séquence de caractères donnant comme URL la source originale des données de l'entité. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source, ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il s'agit de UserContext    
 Propriétés requises  
 - `id`  - `type`    
 Ce modèle de données décrit le contexte d'un utilisateur. Aucune donnée personnelle n'est encodée dans le modèle. Les données réelles de l'utilisateur sont stockées dans un point final différent, identifié par la propriété "refUser".  
@@ -20,26 +20,35 @@ UserContext:
       description: 'The mailing address.'    
       properties:    
         addressCountry:    
+          description: 'Property. The country. For example, Spain. Model:''https://schema.org/Text'''    
           type: string    
         addressLocality:    
+          description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/Text'''    
           type: string    
         addressRegion:    
+          description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/Text'''    
           type: string    
         areaServed:    
+          description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/Text'''    
           type: string    
         postOfficeBoxNumber:    
+          description: 'Property. The post office box number for PO box addresses. For example, Spain. Model:''https://schema.org/Text'''    
           type: string    
         postalCode:    
+          description: 'Property. The postal code. For example, Spain. Model:''https://schema.org/Text'''    
           type: string    
         streetAddress:    
+          description: 'Property. The street address. Model:''https://schema.org/Text'''    
           type: string    
       type: Property    
     alternateName:    
       description: 'An alternative name for this item'    
       type: Property    
     areaServed:    
-      description: 'The geographic area where a service or offered item is provided.'    
+      description: 'The geographic area where a service or offered item is provided'    
       type: Property    
+      x-ngsi:    
+        model: https://schema.org/Text    
     dataProvider:    
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'    
       type: Property    
@@ -64,6 +73,8 @@ UserContext:
         - description: 'Property. Identifier format of any NGSI entity'    
           format: uri    
           type: string    
+      description: 'Unique identifier of the entity'    
+      type: Property    
     location:    
       $id: https://geojson.org/schema/Geometry.json    
       $schema: "http://json-schema.org/draft-07/schema#"    
@@ -218,19 +229,22 @@ UserContext:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
       items:    
         anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+        description: 'Property. Unique identifier of the entity'    
       type: Property    
     refActivity:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'An object representing the current activity performed by the User.'    
       type: Relationship    
       x-ngsi:    
-        model: https://schema.org/DateTime    
+        model: https://schema.org/URL    
     refUser:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)'    
@@ -240,10 +254,13 @@ UserContext:
     refUserDevice:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'An object representing the current device used by the User.'    
       type: Relationship    
+      x-ngsi:    
+        model: https://schema.org/URL    
     seeAlso:    
       description: 'list of uri pointing to additional resources about the item'    
       oneOf:    
