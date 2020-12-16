@@ -1,6 +1,6 @@
 Entity: Activity  
 ================  
-[Open License](https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/Activity/LICENSE.md)  
+[Open License](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
 Global description: **Information on the current activity performed by an anonymized user in a given point in time**  
 
 ## List of properties  
