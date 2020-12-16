@@ -1,11 +1,11 @@
 Entidad: Actividad  
 ==================  
-Esta especificación es una **versión temporal**. Se genera automáticamente a partir de las propiedades documentadas descritas en el schema.json condensadas en el archivo `model.yaml`. Se ha creado un archivo temporal `nuevo_modelo.yaml` en cada modelo de datos para evitar el impacto en los scripts existentes. Por lo tanto, la especificación estará incompleta mientras el schema.json no se actualice al nuevo formato (documentando las propiedades). Una vez actualizado el `modelo.yaml` (`nuevo_modelo.yaml`) necesita ser actualizado también (automáticamente) . Más información en este [link](https://github.com/smart-data-models/data-models/blob/master/specs/warning_message_new_spec.md). Mientras sea un formato provisional cualquier [feedback es bienvenido en este formulario](https://smartdatamodels.org/index.php/submit-an-issue-2/) eligiendo la opción `Feedback on the new specification`.  
+[Licencia abierta](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
 Descripción global: **Información sobre la actividad actual realizada por un usuario anónimo en un momento dado**  
 
 ## Lista de propiedades  
 
-- `activityType`: La acción realizada (por ejemplo, Drive). Referencias normativas: https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: Un nombre alternativo para este artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateActivityEnded`: La actividad termina en el tiempo.  - `dateActivityStarted`: Debe ser igual a UserActivity.  - `dateCreated`: Sello de tiempo de creación de la entidad. Normalmente será asignado por la plataforma de almacenamiento.  - `dateModified`: Sello de tiempo de la última modificación de la entidad. Normalmente será asignado por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`:   - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificados JSON que hace referencia a los Ids únicos de los propietarios  - `refAgent`: Referencia al agente (es decir, una persona) que realiza la actividad. Puede ser otra entidad NGSI o cualquier "Agente" identificado por una URI.  - `refObject`: Referencia al objeto de la acción (por ejemplo, Car1). Puede ser otra Entidad NGSI o cualquier "Objeto" identificado por una URI.  - `refTarget`: Referencia al objetivo de la acción (por ejemplo, Office1).  - `seeAlso`: lista de uri que apunta a recursos adicionales sobre el tema  - `source`: Una secuencia de caracteres que da como URL la fuente original de los datos de la entidad. Se recomienda que sea el nombre de dominio completamente calificado del proveedor de la fuente, o la URL del objeto fuente.  - `type`: Tipo de entidad NGSI. Tiene que ser UserActivity    
+- `activityType`: La acción realizada (por ejemplo, Drive). Referencias normativas: https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: Un nombre alternativo para este artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateActivityEnded`: La actividad termina en el tiempo.  - `dateActivityStarted`: Debe ser igual a UserActivity.  - `dateCreated`: Sello de tiempo de creación de la entidad. Normalmente será asignado por la plataforma de almacenamiento.  - `dateModified`: Sello de tiempo de la última modificación de la entidad. Esta será normalmente asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificados JSON que hace referencia a los Ids únicos de los propietarios  - `refAgent`: Referencia al agente (es decir, una persona) que realiza la actividad. Puede ser otra entidad NGSI o cualquier "Agente" identificado por una URI.  - `refObject`: Referencia al objeto de la acción (por ejemplo, Car1). Puede ser otra Entidad NGSI o cualquier "Objeto" identificado por una URI.  - `refTarget`: Referencia al objetivo de la acción (por ejemplo, Office1).  - `seeAlso`: lista de uri que apunta a recursos adicionales sobre el tema  - `source`: Una secuencia de caracteres que da como URL la fuente original de los datos de la entidad. Se recomienda que sea el nombre de dominio completamente calificado del proveedor de la fuente, o la URL del objeto fuente.  - `type`: Tipo de entidad NGSI. Tiene que ser UserActivity    
 Propiedades requeridas  
 - `activityType`  - `id`  - `refAgent`  - `type`    
 Esta entidad representa la actividad actual realizada por un Usuario. Puede utilizarse en diferentes escenarios, desde el modelado de actividades sociales en un sitio (por ejemplo, Federico comparte una foto de su perro) hasta actividades de la vida real (por ejemplo, Federico conduce su coche al trabajo). El modelo se inspira en gran medida en [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). El modelo representa las actividades de los usuarios utilizando la siguiente estructura predicada "Agente, Verbo, Objeto*, Objetivo*", donde "Objeto" y "Objetivo" son opcionales. El "Agente" se identifica por el atributo "refAgente", el "Verbo" se identifica por "Tipo de actividad", el "Objeto" se identifica por "refObjeto", y el "Objetivo" se identifica por "refObjetivo".  
@@ -58,6 +58,8 @@ Activity:
         - description: 'Property. Identifier format of any NGSI entity'    
           format: uri    
           type: string    
+      description: 'Unique identifier of the entity'    
+      type: Property    
     name:    
       description: 'The name of this item.'    
       type: Property    
@@ -65,10 +67,12 @@ Activity:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
       items:    
         anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
+        description: 'Property. Unique identifier of the entity'    
       type: Property    
     refAgent:    
       anyOf:    
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'    
@@ -92,6 +96,7 @@ Activity:
     refTarget:    
       anyOf:    
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'Reference to the target of the action (e.g. Office1).'    
