@@ -5,7 +5,7 @@ Entity: Activity
 
 ## List of properties  
 
-- `activityType`: The action performed (e.g. Drive). Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: An alternative name for this item  - `dataProvider`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateActivityEnded`: Activity's end timestamp.  - `dateActivityStarted`: It must be equal to UserActivity.  - `dateCreated`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description`: A description of this item  - `id`:   - `name`: The name of this item.  - `owner`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `refAgent`: Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.  - `refObject`: Reference to the object of the action (e.g. Car1). It may be another NGSI Entity or any `Object` identified by an URI.  - `refTarget`: Reference to the target of the action (e.g. Office1).  - `seeAlso`: list of uri pointing to additional resources about the item  - `source`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `type`: NGSI Entity type. It has to be UserActivity    
+- `activityType`: The action performed (e.g. Drive). Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: An alternative name for this item  - `dataProvider`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateActivityEnded`: Activity's end timestamp.  - `dateActivityStarted`: It must be equal to UserActivity.  - `dateCreated`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description`: A description of this item  - `id`: Unique identifier of the entity  - `name`: The name of this item.  - `owner`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `refAgent`: Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.  - `refObject`: Reference to the object of the action (e.g. Car1). It may be another NGSI Entity or any `Object` identified by an URI.  - `refTarget`: Reference to the target of the action (e.g. Office1).  - `seeAlso`: list of uri pointing to additional resources about the item  - `source`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `type`: NGSI Entity type. It has to be UserActivity    
 Required properties  
 - `activityType`  - `id`  - `refAgent`  - `type`    
 This entity represents the current activity performed by a User. It can be used in different scenarios, from modeling social activities on a site (e.g. Federico shares a picture of his dog) to real life activities (e.g. Federico drives his car to work). The model is largely inspired by [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). The model represents user activities using the following predicate structure  `(Agent, Verb, Object*, Target*)`, where `Object` and `Target` are optional. The `Agent` is identified by the attribute `refAgent`, the `Verb` is identified by `activityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`.  
@@ -58,6 +58,8 @@ Activity:
         - description: 'Property. Identifier format of any NGSI entity'    
           format: uri    
           type: string    
+      description: 'Unique identifier of the entity'    
+      type: Property    
     name:    
       description: 'The name of this item.'    
       type: Property    
@@ -65,10 +67,12 @@ Activity:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
       items:    
         anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
+        description: 'Property. Unique identifier of the entity'    
       type: Property    
     refAgent:    
       anyOf:    
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'    
@@ -92,6 +96,7 @@ Activity:
     refTarget:    
       anyOf:    
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'Reference to the target of the action (e.g. Office1).'    
