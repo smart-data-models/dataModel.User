@@ -5,7 +5,7 @@ Entity: UserContext
 
 ## List of properties  
 
-- `address`: The mailing address.  - `alternateName`: An alternative name for this item  - `areaServed`: The geographic area where a service or offered item is provided.  - `dataProvider`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCreated`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description`: A description of this item  - `id`:   - `location`:   - `name`: The name of this item.  - `owner`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `refActivity`: An object representing the current activity performed by the User.  - `refUser`: Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: An object representing the current device used by the User.  - `seeAlso`: list of uri pointing to additional resources about the item  - `source`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `type`: NGSI Entity type. It as to be UserContext    
+- `address`: The mailing address.  - `alternateName`: An alternative name for this item  - `areaServed`: The geographic area where a service or offered item is provided  - `dataProvider`: A sequence of characters identifying the provider of the harmonised data entity.  - `dateCreated`: Entity creation timestamp. This will usually be allocated by the storage platform.  - `dateModified`: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.  - `description`: A description of this item  - `id`: Unique identifier of the entity  - `location`:   - `name`: The name of this item.  - `owner`: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)  - `refActivity`: An object representing the current activity performed by the User.  - `refUser`: Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: An object representing the current device used by the User.  - `seeAlso`: list of uri pointing to additional resources about the item  - `source`: A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.  - `type`: NGSI Entity type. It as to be UserContext    
 Required properties  
 - `id`  - `type`    
 This data model describe the Context of a User. No personal data is encoded in the model. The actual User data are stored in a different end point, as identified by the `refUser` property.  
@@ -20,26 +20,35 @@ UserContext:
       description: 'The mailing address.'    
       properties:    
         addressCountry:    
+          description: 'Property. The country. For example, Spain. Model:''https://schema.org/Text'''    
           type: string    
         addressLocality:    
+          description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/Text'''    
           type: string    
         addressRegion:    
+          description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/Text'''    
           type: string    
         areaServed:    
+          description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/Text'''    
           type: string    
         postOfficeBoxNumber:    
+          description: 'Property. The post office box number for PO box addresses. For example, Spain. Model:''https://schema.org/Text'''    
           type: string    
         postalCode:    
+          description: 'Property. The postal code. For example, Spain. Model:''https://schema.org/Text'''    
           type: string    
         streetAddress:    
+          description: 'Property. The street address. Model:''https://schema.org/Text'''    
           type: string    
       type: Property    
     alternateName:    
       description: 'An alternative name for this item'    
       type: Property    
     areaServed:    
-      description: 'The geographic area where a service or offered item is provided.'    
+      description: 'The geographic area where a service or offered item is provided'    
       type: Property    
+      x-ngsi:    
+        model: https://schema.org/Text    
     dataProvider:    
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'    
       type: Property    
@@ -64,6 +73,8 @@ UserContext:
         - description: 'Property. Identifier format of any NGSI entity'    
           format: uri    
           type: string    
+      description: 'Unique identifier of the entity'    
+      type: Property    
     location:    
       $id: https://geojson.org/schema/Geometry.json    
       $schema: "http://json-schema.org/draft-07/schema#"    
@@ -218,10 +229,12 @@ UserContext:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
       items:    
         anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+        description: 'Property. Unique identifier of the entity'    
       type: Property    
     refActivity:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'An object representing the current activity performed by the User.'    
@@ -231,6 +244,7 @@ UserContext:
     refUser:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)'    
@@ -240,6 +254,7 @@ UserContext:
     refUserDevice:    
       anyOf:    
         - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
+          description: 'Property. Unique identifier of the entity'    
         - format: uri    
           type: string    
       description: 'An object representing the current device used by the User.'    
