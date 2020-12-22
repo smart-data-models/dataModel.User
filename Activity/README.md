@@ -9,6 +9,10 @@ The model represents user activities using the following predicate structure (Ag
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.User/Activity/swagger.yaml)
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/doc/spec.md)
+
+Link to the [specification in Spanish](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/doc/spec_ES.md)
+
+Link to the [specification in French](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/doc/spec_FR.md)
 ### Examples
 
 Link to the [example](https://smart-data-models.github.io/dataModel.User/Activity/examples/example.json) (keyvalues) for NGSI v2
