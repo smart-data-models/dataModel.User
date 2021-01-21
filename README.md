@@ -4,12 +4,9 @@
 ### List of data models
 
 The following entity types are available:
-- [Activity](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/README.md). This entity represents the current activity performed by a User. It can be used in different scenarios, from modeling social activities on a site (e.g. Federico shares a picture of his dog) to real life activities (e.g. Federico drives his car to work). The model is largely inspired by https://www.w3.org/TR/activitystreams-core.
-The model represents user activities using the following predicate structure (Agent, Verb, Object*, Target*), where Object and Target are optional. The Agent is identified by the attribute refAgent, the Verb is identified by activityType, the Object is identified by refObject, and the Target is identified by refTarget.
+- [Activity](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/README.md). Information on the current activity performed by an anonymized user in a given point in time
 
-- [UserContext](https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/README.md). This data model describe the Context of a User. No personal data is encoded in the model. The actual
-User data are stored in a different end point, as identified by the refUser property..
-
+- [UserContext](https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/README.md). Information on the context of an anonymized in a given point in time
 
 
 
