@@ -1,80 +1,115 @@
----
-# Copyright (c) 2020 Contributors to Smart-Data-Models
-# see https://github.com/smart-data-models/dataModel.User
-
 Activity:
+  description: 'Information on the current activity performed by an anonymized user in a given point in time'
+  properties:
+    activityType:
+      description: "The action performed (e.g. Drive). Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)"
+      type: Property
+      x-ngsi:
+        model: https://schema.org/Text
+    alternateName:
+      description: 'An alternative name for this item'
+      type: Property
+    dataProvider:
+      description: 'A sequence of characters identifying the provider of the harmonised data entity.'
+      type: Property
+    dateActivityEnded:
+      description: 'Activity''s end timestamp.'
+      format: date-time
+      type: Property
+      x-ngsi:
+        model: https://schema.org/DateTime
+    dateActivityStarted:
+      description: 'It must be equal to UserActivity.'
+      format: date-time
+      type: Property
+    dateCreated:
+      description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'
+      format: date-time
+      type: Property
+    dateModified:
+      description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'
+      format: date-time
+      type: Property
+    description:
+      description: 'A description of this item'
+      type: Property
+    id:
+      anyOf: &activity_-_properties_-_owner_-_items_-_anyof
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Unique identifier of the entity'
+      type: Property
+    name:
+      description: 'The name of this item.'
+      type: Property
+    owner:
+      description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
+      items:
+        anyOf: *activity_-_properties_-_owner_-_items_-_anyof
+        description: 'Property. Unique identifier of the entity'
+      type: Property
+    refAgent:
+      anyOf:
+        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof
+          description: 'Property. Unique identifier of the entity'
+        - format: uri
+          type: string
+      description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'
+      type: Relationship
+      x-ngsi:
+        model: https://schema.org/URL
+    refObject:
+      anyOf:
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Reference to the object of the action (e.g. Car1). It may be another NGSI Entity or any `Object` identified by an URI.'
+      type: Relationship
+      x-ngsi:
+        model: https://schema.org/URL
+    refTarget:
+      anyOf:
+        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof
+          description: 'Property. Unique identifier of the entity'
+        - format: uri
+          type: string
+      description: 'Reference to the target of the action (e.g. Office1).'
+      type: Relationship
+      x-ngsi:
+        model: https://schema.org/URL
+    seeAlso:
+      description: 'list of uri pointing to additional resources about the item'
+      oneOf:
+        - items:
+            - format: uri
+              type: string
+          minItems: 1
+          type: array
+        - format: uri
+          type: string
+      type: Property
+    source:
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
+      type: Property
+    type:
+      description: 'NGSI Entity type. It has to be UserActivity'
+      enum:
+        - UserActivity
+      type: Property
   required:
     - activityType
     - refAgent
     - type
     - id
-  allOf:
-    - $ref: >-
-        https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/Common
   type: object
-  description: "This entity represents the current activity performed by a User. It can be used in different scenarios,
-    from modeling social activities on a site (e.g. Federico shares a picture of his dog) to real life activities 
-    (e.g. Federico drives his car to work). The model is largely inspired by https://www.w3.org/TR/activitystreams-core.
-
-    The model represents user activities using the following predicate structure (Agent, Verb, Object*, Target*), where Object and Target are optional.
-    The Agent is identified by the attribute refAgent, the Verb is identified by activityType, the Object is identified by refObject, and the Target is identified by refTarget."
-  properties:
-    activityType:
-      x-ngsi:
-        type: Property
-        model: 'https://schema.org/Text'
-      type: string
-      description: 'The action performed (e.g. Drive).'
-    alternateName:
-      $ref: >-
-        https://smart-data-models.github.io/data-models/schema.org.yaml#/alternateName
-    dataProvider:
-      $ref: >-
-        https://smart-data-models.github.io/data-models/fiware-terms.yaml#/dataProvider
-    dateActivityEnded:
-      x-ngsi:
-        type: Property
-        model: 'https://schema.org/DateTime'
-      type: string
-      description: "Activity's end timestamp."
-      format: date-time
-    dateActivityStarted:
-      x-ngsi:
-        type: Property
-        model: 'https://schema.org/DateTime'
-      type: string
-      description: "Activity's start timestamp."
-      format: date-time
-    description:
-      $ref: >-
-        https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/description
-    name:
-      $ref: >-
-        https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name
-    owner:
-      $ref: >-
-        https://smart-data-models.github.io/data-models/fiware-terms.yaml#/owner
-    refAgent:
-      x-ngsi:
-        type: Relationship
-        model: 'https://schema.org/URL'
-      description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any Agent identified by an URI.'
-      type: string
-      format: uri
-    refObject:
-      x-ngsi:
-        type: Relationship
-        model: 'https://schema.org/URL'
-      description: 'Reference to the object of the action (e.g. Car1). It may be another NGSI Entity or any Object identified by an URI.'
-      type: string
-      format: uri
-    refTarget:
-      x-ngsi:
-        type: Relationship
-        model: 'https://schema.org/URL'
-      description: 'Reference to the target of the action (e.g. Office1).'
-      type: string
-      format: uri
-    source:
-      $ref: >-
-        https://smart-data-models.github.io/data-models/fiware-terms.yaml#/source
