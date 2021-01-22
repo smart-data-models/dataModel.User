@@ -2,9 +2,7 @@
 
 ## Description 
 
-This data model describe the Context of a User. No personal data is encoded in the model. The actual
-User data are stored in a different end point, as identified by the refUser property..
-
+Information on the context of an anonymized in a given point in time
 ### Specification
 
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.User/UserContext/swagger.yaml)
