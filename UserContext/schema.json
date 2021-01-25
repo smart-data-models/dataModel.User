@@ -53,7 +53,7 @@
         "type": {
           "type": "string",
           "enum": ["UserContext"],
-          "description": "Property. NGSI Entity type. It as to be UserContext"
+          "description": "Property. NGSI Entity type. It has to be UserContext"
         }
       }
     }
