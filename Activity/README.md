@@ -12,6 +12,8 @@ Link to the [specification](https://smart-data-models.github.io/dataModel.User/A
 Link to the [specification in Spanish](https://smart-data-models.github.io/dataModel.User/Activity/doc/spec_ES.md)
 
 Link to the [specification in French](https://smart-data-models.github.io/dataModel.User/Activity/doc/spec_FR.md)
+
+Link to the [specification in German](https://smart-data-models.github.io/dataModel.User/Activity/doc/spec_DE.md)
 ### Examples
 
 Link to the [example](https://smart-data-models.github.io/dataModel.User/Activity/examples/example.json) (keyvalues) for NGSI v2
