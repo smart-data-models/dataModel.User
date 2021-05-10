@@ -1,62 +1,67 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "$schemaVersion": "0.0",
-  "$id": "https://smart-data-models.github.io/dataModel.User/UserContext/schema.json",
-  "title": "Smart Data Models. User Context schema",
-  "description": "Information on the context of an anonymized in a given point in time",
-  "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
-    },
-    {
-      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
-    },
-    {
-      "properties": {
-        "refActivity": {
-          "description": "Relationship. Model:'https://schema.org/URL'. An object representing the current activity performed by the User.",
-          "anyOf": [
-            {
-              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
-            },
-            {
-              "type": "string",
-              "format": "uri"
-            }
-          ]
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "0.0.1",
+    "$id": "https://smart-data-models.github.io/dataModel.User/UserContext/schema.json",
+    "title": "Smart Data Models. User Context schema",
+    "description": "Information on the context of an anonymized in a given point in time",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
         },
-        "refUserDevice": {
-          "description": "Relationship. Model:'https://schema.org/URL'. An object representing the current device used by the User.",
-          "anyOf": [
-            {
-              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
-            },
-            {
-              "type": "string",
-              "format": "uri"
-            }
-          ]
+        {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
         },
-        "refUser": {
-          "description": "Relationship. Model:'https://schema.org/URL'. Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)",
-          "anyOf": [
-            {
-              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
-            },
-            {
-              "type": "string",
-              "format": "uri"
+        {
+            "properties": {
+                "refActivity": {
+                    "description": "Relationship. Model:'https://schema.org/URL'. An object representing the current activity performed by the User.",
+                    "anyOf": [
+                        {
+                            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    ]
+                },
+                "refUserDevice": {
+                    "description": "Relationship. Model:'https://schema.org/URL'. An object representing the current device used by the User.",
+                    "anyOf": [
+                        {
+                            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    ]
+                },
+                "refUser": {
+                    "description": "Relationship. Model:'https://schema.org/URL'. Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)",
+                    "anyOf": [
+                        {
+                            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    ]
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "UserContext"
+                    ],
+                    "description": "Property. NGSI Entity type. It has to be UserContext"
+                }
             }
-          ]
-        },
-        "type": {
-          "type": "string",
-          "enum": ["UserContext"],
-          "description": "Property. NGSI Entity type. It has to be UserContext"
         }
-      }
-    }
-  ],
-  "required": ["id", "type"]
+    ],
+    "required": [
+        "id",
+        "type"
+    ]
 }
