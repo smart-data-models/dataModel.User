@@ -3,5 +3,6 @@
     "$schemaVersion": "0.0.1",
     "modelTags": "",
     "$id": "https://smart-data-models.github.io/dataModel.User/UserContext/schema.json",
-    "title": "Smart Data Models. User Context schema"
+    "title": "Smart Data Models. User Context schema",
+    "description": "Information on the context of an anonymized in a given point in time"
 }
