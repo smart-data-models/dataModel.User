@@ -2,5 +2,6 @@
     "$schema": "http://json-schema.org/schema#",
     "$schemaVersion": "0.0.1",
     "modelTags": "",
-    "$id": "https://smart-data-models.github.io/dataModel.User/UserContext/schema.json"
+    "$id": "https://smart-data-models.github.io/dataModel.User/UserContext/schema.json",
+    "title": "Smart Data Models. User Context schema"
 }
