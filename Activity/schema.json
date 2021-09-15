@@ -76,5 +76,11 @@
                 }
             }
         }
+    ],
+    "required": [
+        "activityType",
+        "refAgent",
+        "type",
+        "id"
     ]
 }
