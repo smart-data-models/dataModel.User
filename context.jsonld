@@ -10,7 +10,7 @@
         "dateCreated": "https://smartdatamodels.org/dataModel.User/dateCreated",
         "dateModified": "https://smartdatamodels.org/dataModel.User/dateModified",
         "description": "https://smartdatamodels.org/dataModel.User/description",
-        "id": "https://smartdatamodels.org/dataModel.User/id",
+        "id": "@id",
         "location": "https://smartdatamodels.org/dataModel.User/location",
         "name": "https://smartdatamodels.org/dataModel.User/name",
         "owner": "https://smartdatamodels.org/dataModel.User/owner",
@@ -22,6 +22,6 @@
         "refUserDevice": "https://smartdatamodels.org/dataModel.User/refUserDevice",
         "seeAlso": "https://smartdatamodels.org/dataModel.User/seeAlso",
         "source": "https://smartdatamodels.org/dataModel.User/source",
-        "type": "https://smartdatamodels.org/dataModel.User/type"
+        "type": "@type"
     }
 }
