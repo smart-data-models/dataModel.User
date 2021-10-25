@@ -6,7 +6,7 @@ Version: 0.0.1
 Information on the current activity performed by an anonymized user in a given point in time
 ### Specification
 
-Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://github.com/smart-data-models/dataModel.User/blob/master/Activity/swagger.yaml)
+Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/Activity/swagger.yaml)
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/doc/spec.md)
 
