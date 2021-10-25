@@ -6,7 +6,7 @@ Version: 0.0.1
 Information on the context of an anonymized in a given point in time
 ### Specification
 
-Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/swagger.yaml)
+Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/UserContext/swagger.yaml)
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/doc/spec.md)
 
