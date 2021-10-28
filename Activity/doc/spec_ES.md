@@ -171,7 +171,7 @@ Activity:
 }  
 ```  
 #### Actividad NGSI-v2 normalizada Ejemplo  
-Aquí hay un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+Este es un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
   "id": "UserActivity1",  
@@ -240,7 +240,7 @@ Activity:
 }  
 ```  
 #### Actividad NGSI-LD normalizada Ejemplo  
-Este es un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+Aquí hay un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
   "@context": [  
