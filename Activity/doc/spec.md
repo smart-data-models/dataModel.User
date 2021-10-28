@@ -1,6 +1,7 @@
 Entity: Activity  
 ================  
 [Open License](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
+[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 Global description: **Information on the current activity performed by an anonymized user in a given point in time**  
 
 ## List of properties  
@@ -18,36 +19,50 @@ Activity:
   properties:    
     activityType:    
       description: "The action performed (e.g. Drive). Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)"    
-      type: Property    
+      type: string    
       x-ngsi:    
         model: https://schema.org/Text    
+        type: Property    
     alternateName:    
       description: 'An alternative name for this item'    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     dataProvider:    
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     dateActivityEnded:    
       description: 'Activity''s end timestamp.'    
       format: date-time    
-      type: Property    
+      type: string    
       x-ngsi:    
         model: https://schema.org/DateTime    
+        type: Property    
     dateActivityStarted:    
       description: 'It must be equal to UserActivity.'    
       format: date-time    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     dateCreated:    
       description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'    
       format: date-time    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     dateModified:    
       description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'    
       format: date-time    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     description:    
       description: 'A description of this item'    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     id:    
       anyOf: &activity_-_properties_-_owner_-_items_-_anyof    
         - description: 'Property. Identifier format of any NGSI entity'    
@@ -59,16 +74,21 @@ Activity:
           format: uri    
           type: string    
       description: 'Unique identifier of the entity'    
-      type: Property    
+      x-ngsi:    
+        type: Property    
     name:    
       description: 'The name of this item.'    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     owner:    
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
       items:    
         anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
         description: 'Property. Unique identifier of the entity'    
-      type: Property    
+      type: array    
+      x-ngsi:    
+        type: Property    
     refAgent:    
       anyOf:    
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
@@ -76,9 +96,9 @@ Activity:
         - format: uri    
           type: string    
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'    
-      type: Relationship    
       x-ngsi:    
         model: https://schema.org/URL    
+        type: Relationship    
     refObject:    
       anyOf:    
         - description: 'Property. Identifier format of any NGSI entity'    
@@ -90,9 +110,9 @@ Activity:
           format: uri    
           type: string    
       description: 'Reference to the object of the action (e.g. Car1). It may be another NGSI Entity or any `Object` identified by an URI.'    
-      type: Relationship    
       x-ngsi:    
         model: https://schema.org/URL    
+        type: Relationship    
     refTarget:    
       anyOf:    
         - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
@@ -100,28 +120,33 @@ Activity:
         - format: uri    
           type: string    
       description: 'Reference to the target of the action (e.g. Office1).'    
-      type: Relationship    
       x-ngsi:    
         model: https://schema.org/URL    
+        type: Relationship    
     seeAlso:    
       description: 'list of uri pointing to additional resources about the item'    
       oneOf:    
         - items:    
-            - format: uri    
-              type: string    
+            format: uri    
+            type: string    
           minItems: 1    
           type: array    
         - format: uri    
           type: string    
-      type: Property    
+      x-ngsi:    
+        type: Property    
     source:    
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
     type:    
       description: 'NGSI Entity type. It has to be UserActivity'    
       enum:    
         - UserActivity    
-      type: Property    
+      type: string    
+      x-ngsi:    
+        type: Property    
   required:    
     - activityType    
     - refAgent    
@@ -131,8 +156,8 @@ Activity:
 ```  
 </details>    
 ## Example payloads    
-#### Activity NGSI V2 key-values Example    
-Here is an example of a Activity in JSON format as key-values. This is compatible with NGSI V2 when  using `options=keyValues` and returns the context data of an individual entity.  
+#### Activity NGSI-v2 key-values Example    
+Here is an example of a Activity in JSON-LD format as key-values. This is compatible with NGSI-v2 when  using `options=keyValues` and returns the context data of an individual entity.  
 ```json  
 {  
   "id": "UserActivity1",  
@@ -145,8 +170,8 @@ Activity:
   "refAgent": "User1"  
 }  
 ```  
-#### Activity NGSI V2 normalized Example    
-Here is an example of a Activity in JSON format as normalized. This is compatible with NGSI V2 when not using options and returns the context data of an individual entity.  
+#### Activity NGSI-v2 normalized Example    
+Here is an example of a Activity in JSON-LD format as normalized. This is compatible with NGSI-v2 when not using options and returns the context data of an individual entity.  
 ```json  
 {  
   "id": "UserActivity1",  
@@ -178,54 +203,60 @@ Activity:
 #### Activity NGSI-LD key-values Example    
 Here is an example of a Activity in JSON-LD format as key-values. This is compatible with NGSI-LD when  using `options=keyValues` and returns the context data of an individual entity.  
 ```json  
-{"@context": ["https://schema.lab.fiware.org/ld/context",  
-              "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"],  
- "activityType": "Drive",  
- "dateActivityStarted": {"@type": "DateTime",  
-                         "@value": "2016-11-30T07:00:00.00Z"},  
- "description": "User1 drive Car1 to Office1",  
- "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
- "refAgent": "urn:ngsi-ld:Agent:User1",  
- "refObject": "urn:ngsi-ld:Object:Car1",  
- "refTarget": "urn:ngsi-ld:Target:Office1",  
- "type": "UserActivity"}  
+{  
+  "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
+  "type": "UserActivity",  
+  "description": {  
+    "type": "Property",  
+    "value": "User1 drive Car1 to Office1"  
+  },  
+  "refTarget": {  
+    "type": "Relationship",  
+    "object": "urn:ngsi-ld:Target:Office1"  
+  },  
+  "activityType": {  
+    "type": "Property",  
+    "value": "Drive"  
+  },  
+  "dateActivityStarted": {  
+    "type": "Property",  
+    "value": {  
+      "@type": "DateTime",  
+      "@value": "2016-11-30T07:00:00.00Z"  
+    }  
+  },  
+  "refAgent": {  
+    "type": "Relationship",  
+    "object": "urn:ngsi-ld:Agent:User1"  
+  },  
+  "refObject": {  
+    "type": "Relationship",  
+    "object": "urn:ngsi-ld:Object:Car1"  
+  },  
+  "@context": [  
+    "https://smartdatamodels.org/context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+  ]  
+}  
 ```  
 #### Activity NGSI-LD normalized Example    
 Here is an example of a Activity in JSON-LD format as normalized. This is compatible with NGSI-LD when not using options and returns the context data of an individual entity.  
 ```json  
 {  
-    "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
-    "type": "UserActivity",  
-    "description": {  
-        "type": "Property",  
-        "value": "User1 drive Car1 to Office1"  
-    },  
-    "refTarget": {  
-        "type": "Relationship",  
-        "object": "urn:ngsi-ld:Target:Office1"  
-    },  
-    "activityType": {  
-        "type": "Property",  
-        "value": "Drive"  
-    },  
-    "dateActivityStarted": {  
-        "type": "Property",  
-        "value": {  
-            "@type": "DateTime",  
-            "@value": "2016-11-30T07:00:00.00Z"  
-        }  
-    },  
-    "refAgent": {  
-        "type": "Relationship",  
-        "object": "urn:ngsi-ld:Agent:User1"  
-    },  
-    "refObject": {  
-        "type": "Relationship",  
-        "object": "urn:ngsi-ld:Object:Car1"  
-    },  
-    "@context": [  
-        "https://schema.lab.fiware.org/ld/context",  
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-    ]  
+  "@context": [  
+    "https://smartdatamodels.org/context.jsonld",  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+  ],  
+  "activityType": "Drive",  
+  "dateActivityStarted": {  
+    "@type": "DateTime",  
+    "@value": "2016-11-30T07:00:00.00Z"  
+  },  
+  "description": "User1 drive Car1 to Office1",  
+  "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
+  "refAgent": "urn:ngsi-ld:Agent:User1",  
+  "refObject": "urn:ngsi-ld:Object:Car1",  
+  "refTarget": "urn:ngsi-ld:Target:Office1",  
+  "type": "UserActivity"  
 }  
 ```  
