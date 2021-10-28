@@ -157,7 +157,7 @@ Activity:
 </details>    
 ## ペイロードの例  
 #### 活動内容 NGSI-v2のキーバリューの例  
-Activityをkey-valuesとしてJSON-LD形式で出力した例です。これは`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
+Activityをkey-valuesとしてJSON-LD形式で出力した例です。これは`options=keyValues`を使った場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "UserActivity1",  
