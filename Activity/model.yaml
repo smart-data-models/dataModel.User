@@ -138,7 +138,7 @@ Activity:
     - id
   type: object
   x-derived-from: ""
-  x-disclaimer: 'copyleft (c) 2021 Contributors to Smart Data Models Program'
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/Activity/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.User/Activity/schema.json
   x-model-tags: ""
