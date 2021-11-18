@@ -1,15 +1,15 @@
-Entidad: UserContext  
-====================  
-[Licencia abierta](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
-[documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-Descripción global: **Información sobre el contexto de un anónimo en un momento dado**  
+Entità: UserContext  
+===================  
+[Licenza aperta](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
+[documento generato automaticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+Descrizione globale: **Informazioni sul contesto di un anonimo in un dato momento**  
 
-## Lista de propiedades  
+## Elenco delle proprietà  
 
-- `address`: La dirección postal  - `alternateName`: Un nombre alternativo para este artículo  - `areaServed`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `location`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `refActivity`: Un objeto que representa la actividad actual realizada por el usuario.  - `refUser`: Referencia al usuario (anónimo) al que está asociado este UserContext. Referencias normativas: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un objeto que representa el dispositivo actual utilizado por el usuario.  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. Tiene que ser UserContext    
-Propiedades requeridas  
-- `id`  - `type`  ## Descripción del modelo de datos de las propiedades  
-Ordenados alfabéticamente (haga clic para ver los detalles)  
+- `address`: L'indirizzo postale  - `alternateName`: Un nome alternativo per questa voce  - `areaServed`: L'area geografica in cui viene fornito un servizio o un articolo offerto  - `dataProvider`: Una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzata.  - `dateCreated`: Timestamp di creazione dell'entità. Questo sarà di solito assegnato dalla piattaforma di archiviazione.  - `dateModified`: Timestamp dell'ultima modifica dell'entità. Questo sarà di solito assegnato dalla piattaforma di archiviazione.  - `description`: Una descrizione di questo articolo  - `id`: Identificatore unico dell'entità  - `location`: Riferimento Geojson all'elemento. Può essere Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: Il nome di questo articolo.  - `owner`: Una lista contenente una sequenza di caratteri codificata in JSON che si riferisce agli ID unici dei proprietari  - `refActivity`: Un oggetto che rappresenta l'attività corrente eseguita dall'utente.  - `refUser`: Riferimento all'utente (anonimo) a cui questo UserContext è associato. Riferimenti normativi: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un oggetto che rappresenta il dispositivo corrente utilizzato dall'utente.  - `seeAlso`: elenco di uri che puntano a risorse aggiuntive sull'elemento  - `source`: Una sequenza di caratteri che dà la fonte originale dei dati dell'entità come URL. Si raccomanda di essere il nome di dominio completamente qualificato del fornitore di origine, o l'URL dell'oggetto di origine.  - `type`: Tipo di entità NGSI. Deve essere UserContext    
+Proprietà richieste  
+- `id`  - `type`  ## Descrizione del modello di dati delle proprietà  
+Ordinati in ordine alfabetico (clicca per i dettagli)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 UserContext:    
@@ -312,9 +312,9 @@ UserContext:
   type: object    
 ```  
 </details>    
-## Ejemplo de carga útil  
-#### UserContext NGSI-v2 key-values Ejemplo  
-Aquí hay un ejemplo de un UserContext en formato JSON-LD como valores-clave. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+## Esempio di payloads  
+#### UserContext NGSI-v2 valori chiave Esempio  
+Ecco un esempio di UserContext in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "id": "UserContext1",  
@@ -328,8 +328,8 @@ UserContext:
   "refUser": "User1"  
 }  
 ```  
-#### UserContext NGSI-v2 normalizado Ejemplo  
-Aquí hay un ejemplo de un UserContext en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### UserContext NGSI-v2 normalizzato Esempio  
+Ecco un esempio di UserContext in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non usa opzioni e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "id": "UserContext1",  
@@ -355,8 +355,8 @@ UserContext:
   }  
 }  
 ```  
-#### UserContext NGSI-LD key-values Ejemplo  
-Aquí hay un ejemplo de un UserContext en formato JSON-LD como valores-clave. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+#### UserContext NGSI-LD valori-chiave Esempio  
+Ecco un esempio di UserContext in formato JSON-LD come key-values. Questo è compatibile con NGSI-LD quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "id": "urn:ngsi-ld:UserContext:UserContext1",  
@@ -389,8 +389,8 @@ UserContext:
   ]  
 }  
 ```  
-#### UserContext NGSI-LD normalizado Ejemplo  
-Este es un ejemplo de un UserContext en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### UserContext NGSI-LD normalizzato Esempio  
+Ecco un esempio di UserContext in formato JSON-LD normalizzato. Questo è compatibile con NGSI-LD quando non usa opzioni e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "@context": [  

@@ -1,15 +1,15 @@
-Entidad: UserContext  
-====================  
-[Licencia abierta](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
-[documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-Descripción global: **Información sobre el contexto de un anónimo en un momento dado**  
+Entity:UserContext  
+==================  
+[オープンライセンス](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
+[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+グローバルな記述。**ある時点での匿名の人の状況に関する情報**。  
 
-## Lista de propiedades  
+## プロパティのリスト  
 
-- `address`: La dirección postal  - `alternateName`: Un nombre alternativo para este artículo  - `areaServed`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `location`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `refActivity`: Un objeto que representa la actividad actual realizada por el usuario.  - `refUser`: Referencia al usuario (anónimo) al que está asociado este UserContext. Referencias normativas: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un objeto que representa el dispositivo actual utilizado por el usuario.  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. Tiene que ser UserContext    
-Propiedades requeridas  
-- `id`  - `type`  ## Descripción del modelo de datos de las propiedades  
-Ordenados alfabéticamente (haga clic para ver los detalles)  
+- `address`: 郵送先住所  - `alternateName`: このアイテムの別称  - `areaServed`: サービスや提供されるアイテムが提供される地理的なエリア  - `dataProvider`: 調和されたデータ・エンティティの提供者を識別する一連の文字。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  - `dateModified`: エンティティが最後に変更された時のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  - `description`: このアイテムの説明  - `id`: エンティティのユニークな識別子  - `location`: アイテムへのGeojson参照。Point、LineString、Polygon、MultiPoint、MultiLineString、MultiPolygonのいずれかです。  - `name`: このアイテムの名前です。  - `owner`: オーナーのIDを参照するJSONエンコードされた文字列を含むリスト  - `refActivity`: ユーザーが現在行っているアクティビティを表すオブジェクト。  - `refUser`: このUserContextが関連付けられている（匿名化された）Userへの参照。規範となるリファレンス。[https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: ユーザーが現在使用しているデバイスを表すオブジェクトです。  - `seeAlso`: アイテムに関する追加リソースを示すuriのリスト  - `source`: エンティティデータのオリジナルソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI エンティティタイプ。UserContextである必要があります。    
+必須項目  
+- `id`  - `type`  ## データモデルによるプロパティの記述  
+アルファベット順（クリックすると詳細が表示されます  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 UserContext:    
@@ -312,9 +312,9 @@ UserContext:
   type: object    
 ```  
 </details>    
-## Ejemplo de carga útil  
-#### UserContext NGSI-v2 key-values Ejemplo  
-Aquí hay un ejemplo de un UserContext en formato JSON-LD como valores-clave. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+## ペイロードの例  
+#### UserContext NGSI-v2 key-values の例。  
+UserContextをkey-valuesとしてJSON-LD形式で記述した例を示します。これは、`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "UserContext1",  
@@ -328,8 +328,8 @@ UserContext:
   "refUser": "User1"  
 }  
 ```  
-#### UserContext NGSI-v2 normalizado Ejemplo  
-Aquí hay un ejemplo de un UserContext en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### UserContext NGSI-v2 正規化された例  
+ここでは、正規化されたJSON-LD形式のUserContextの例を示します。これは、オプションを使用しない場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "UserContext1",  
@@ -355,8 +355,8 @@ UserContext:
   }  
 }  
 ```  
-#### UserContext NGSI-LD key-values Ejemplo  
-Aquí hay un ejemplo de un UserContext en formato JSON-LD como valores-clave. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+#### UserContext NGSI-LD key-values 例  
+UserContextをkey-valuesとしてJSON-LD形式で記述した例を示します。これは、`options=keyValues`を使った場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:UserContext:UserContext1",  
@@ -389,8 +389,8 @@ UserContext:
   ]  
 }  
 ```  
-#### UserContext NGSI-LD normalizado Ejemplo  
-Este es un ejemplo de un UserContext en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### UserContext NGSI-LDの正規化例  
+ここでは、正規化されたJSON-LD形式のUserContextの例を示します。これは、オプションを使用しない場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "@context": [  

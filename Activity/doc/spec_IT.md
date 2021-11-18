@@ -1,17 +1,17 @@
-Entidad: Actividad  
-==================  
-[Licencia abierta](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
-[documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-Descripción global: **Información sobre la actividad actual realizada por un usuario anónimo en un momento determinado**  
+Entità: Attività  
+================  
+[Licenza aperta](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
+[documento generato automaticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+Descrizione globale: **Informazioni sull'attività corrente eseguita da un utente reso anonimo in un dato momento**  
 
-## Lista de propiedades  
+## Elenco delle proprietà  
 
-- `activityType`: La acción realizada (por ejemplo, conducir). Referencias normativas: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: Un nombre alternativo para este artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateActivityEnded`: Fecha de finalización de la actividad.  - `dateActivityStarted`: Debe ser igual a UserActivity.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `refAgent`: Referencia al agente (es decir, una persona) que realiza la actividad. Puede ser otra entidad NGSI o cualquier "agente" identificado por un URI.  - `refObject`: Referencia al objeto de la acción (por ejemplo, coche1). Puede ser otra entidad NGSI o cualquier `Objeto` identificado por un URI.  - `refTarget`: Referencia al objetivo de la acción (por ejemplo, Oficina1).  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen, o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. Tiene que ser UserActivity    
-Propiedades requeridas  
+- `activityType`: L'azione eseguita (ad es. Guidare). Riferimenti normativi: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: Un nome alternativo per questa voce  - `dataProvider`: Una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzata.  - `dateActivityEnded`: Timestamp di fine attività.  - `dateActivityStarted`: Deve essere uguale a UserActivity.  - `dateCreated`: Timestamp di creazione dell'entità. Questo sarà di solito assegnato dalla piattaforma di archiviazione.  - `dateModified`: Timestamp dell'ultima modifica dell'entità. Questo sarà di solito assegnato dalla piattaforma di archiviazione.  - `description`: Una descrizione di questo articolo  - `id`: Identificatore unico dell'entità  - `name`: Il nome di questo articolo.  - `owner`: Una lista contenente una sequenza di caratteri codificata in JSON che si riferisce agli ID unici dei proprietari  - `refAgent`: Riferimento all'agente (cioè una persona) che esegue l'attività. Può essere un'altra entità NGSI o qualsiasi `Agente` identificato da un URI.  - `refObject`: Riferimento all'oggetto dell'azione (es. Car1). Può essere un'altra entità NGSI o qualsiasi `Oggetto` identificato da un URI.  - `refTarget`: Riferimento all'obiettivo dell'azione (ad esempio, Office1).  - `seeAlso`: elenco di uri che puntano a risorse aggiuntive sull'elemento  - `source`: Una sequenza di caratteri che dà la fonte originale dei dati dell'entità come URL. Si raccomanda di essere il nome di dominio completamente qualificato del fornitore di origine, o l'URL dell'oggetto di origine.  - `type`: Tipo di entità NGSI. Deve essere UserActivity    
+Proprietà richieste  
 - `activityType`  - `id`  - `refAgent`  - `type`    
-Esta entidad representa la actividad actual realizada por un usuario. Puede utilizarse en diferentes escenarios, desde el modelado de actividades sociales en un sitio (por ejemplo, Federico comparte una foto de su perro) hasta actividades de la vida real (por ejemplo, Federico conduce su coche al trabajo). El modelo se inspira en gran medida en [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). El modelo representa las actividades del usuario utilizando la siguiente estructura de predicado `(Agente, Verbo, Objeto*, Objetivo*)`, donde `Objeto` y `Objetivo` son opcionales. El `Agente` se identifica con el atributo `refAgente`, el `Verbo` se identifica con el `tipo de actividad`, el `Objeto` se identifica con el `refObjeto`, y el `Objetivo` se identifica con el `refObjetivo`.  
-## Descripción del modelo de datos de las propiedades  
-Ordenados alfabéticamente (haga clic para ver los detalles)  
+Questa entità rappresenta l'attività corrente svolta da un utente. Può essere utilizzata in diversi scenari, dalla modellazione di attività sociali su un sito (ad esempio Federico condivide una foto del suo cane) alle attività della vita reale (ad esempio Federico guida la sua auto al lavoro). Il modello è ampiamente ispirato da [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). Il modello rappresenta le attività dell'utente usando la seguente struttura di predicati `(Agent, Verb, Object*, Target*)`, dove `Object` e `Target` sono opzionali. L' `Agente` è identificato dall'attributo `refAgente`, il `Verbo` è identificato da `activityType`, l' `Oggetto` è identificato da `refObject`, e il `Target` è identificato da `refTarget`.  
+## Descrizione del modello di dati delle proprietà  
+Ordinati in ordine alfabetico (clicca per i dettagli)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 Activity:    
@@ -155,9 +155,9 @@ Activity:
   type: object    
 ```  
 </details>    
-## Ejemplo de carga útil  
-#### Actividad NGSI-v2 key-values Ejemplo  
-Aquí hay un ejemplo de una actividad en formato JSON-LD como valores-clave. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+## Esempio di payloads  
+#### Attività Valori chiave NGSI-v2 Esempio  
+Ecco un esempio di un'attività in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "id": "UserActivity1",  
@@ -170,8 +170,8 @@ Activity:
   "refAgent": "User1"  
 }  
 ```  
-#### Actividad NGSI-v2 normalizada Ejemplo  
-Aquí hay un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### Attività NGSI-v2 normalizzata Esempio  
+Ecco un esempio di un'attività in formato JSON-LD normalizzata. Questo è compatibile con NGSI-v2 quando non usa opzioni e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "id": "UserActivity1",  
@@ -200,8 +200,8 @@ Activity:
   }  
 }  
 ```  
-#### Actividad NGSI-LD key-values Ejemplo  
-Aquí hay un ejemplo de una actividad en formato JSON-LD como valores-clave. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+#### Attività Valori chiave NGSI-LD Esempio  
+Ecco un esempio di attività in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-LD quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
@@ -239,8 +239,8 @@ Activity:
   ]  
 }  
 ```  
-#### Actividad NGSI-LD normalizada Ejemplo  
-Aquí hay un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### Attività NGSI-LD normalizzata Esempio  
+Ecco un esempio di un'attività in formato JSON-LD normalizzata. Questo è compatibile con NGSI-LD quando non usa opzioni e restituisce i dati di contesto di una singola entità.  
 ```json  
 {  
   "@context": [  
