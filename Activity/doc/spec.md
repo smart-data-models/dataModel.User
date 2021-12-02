@@ -309,3 +309,5 @@ Here is an example of a Activity in JSON-LD format as normalized. This is compat
   "type": "UserActivity"  
 }  
 ```  
+
+See [FAQ 10](https://smartdatamodels.org/index.php/faqs/) to get an answer on how to deal with magnitude units
