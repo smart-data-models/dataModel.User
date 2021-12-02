@@ -309,3 +309,4 @@ Hier ist ein Beispiel für eine Aktivität im JSON-LD-Format in normalisierter F
   "type": "UserActivity"  
 }  
 ```
+Siehe [FAQ 10](https://smartdatamodels.org/index.php/faqs/), um eine Antwort auf die Frage zu erhalten, wie man mit Größeneinheiten umgeht
