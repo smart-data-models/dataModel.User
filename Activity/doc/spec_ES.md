@@ -309,3 +309,5 @@ Aquí hay un ejemplo de una actividad en formato JSON-LD normalizado. Esto es co
   "type": "UserActivity"  
 }  
 ```  
+
+Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud
