@@ -1,51 +1,21 @@
-エンティティアクティビティ  
-=============
-  
+[![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
+事業者活動内容  
+=======  
+[オープンライセンス](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
+[ドキュメント自動生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+グローバルな記述です。**ある匿名化されたユーザーが、ある時点で行った現在の活動に関する情報**。  
+バージョン: 0.0.1  
 
-[オープンライセンス](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
+## プロパティ一覧  
 
-[document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-
-グローバルな記述。**匿名化されたユーザーがある時点で行った現在の活動に関する情報**。  
-
-
-## プロパティのリスト  
-
-
-- `activityType`: 実行されたアクション（例：ドライブ）。規範となるリファレンス[https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  
-- `alternateName`: このアイテムの別称  
-- `dataProvider`: 調和されたデータ・エンティティの提供者を識別する一連の文字。  
-- `dateActivityEnded`: アクティビティの終了時のタイムスタンプ。  
-- `dateActivityStarted`: UserActivityと同じである必要があります。  
-- `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  
-- `dateModified`: エンティティが最後に変更された時のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  
-- `description`: このアイテムの説明  
-- `id`: エンティティのユニークな識別子  
-- `name`: このアイテムの名前です。  
-- `owner`: オーナーのIDを参照するJSONエンコードされた文字列を含むリスト  
-- `refAgent`: 活動を行うエージェント（人）への参照。それは、他のNGSIエンティティであったり、URIで特定される任意の`Agent`であったりします。  
-- `refObject`: アクションのオブジェクトへの参照（例：Car1）。それは、別のNGSIエンティティであったり、URIで識別される任意の`Object`であったりします。  
-- `refTarget`: アクションのターゲットへの参照（例：Office1）。  
-- `seeAlso`: アイテムに関する追加リソースを示すuriのリスト  
-- `source`: エンティティデータのオリジナルソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  
-- `type`: NGSI エンティティ・タイプ。UserActivityである必要があります。  
-  
-
-必須項目  
-- `activityType`  
-- `id`  
-- `refAgent`  
-- `type`  
-  
-
-このエンティティは、ユーザーが現在行っているアクティビティを表します。このエンティティは、サイト上でのソーシャルアクティビティのモデル化（例：Federicoが自分の犬の写真を共有する）から、実生活でのアクティビティ（例：Federicoが自分の車で通勤する）まで、さまざまなシナリオで使用できます。このモデルは、[https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core)に大きく影響されています。このモデルは以下の述語構造 `(Agent, Verb, Object*, Target*)` を用いてユーザの活動を表現します．Agent` は属性 `refAgent` で識別され、`Verb` は `activityType` で識別され、`Object` は `refObject` で識別され、`Target` は `refTarget` で識別されます。  
-
-## データモデルによるプロパティの記述  
-
-アルファベット順（クリックすると詳細が表示されます  
+- `activityType`: 実行された動作（例：ドライブ）。規範となる参考文献。[https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: この項目の別称  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateActivityEnded`: アクティビティの終了タイムスタンプ。  - `dateActivityStarted`: UserActivityと等しくなければならない。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリスト  - `refAgent`: アクティビティを実行するエージェント(すなわち人)への参照。別の NGSI エンティティ、または URI で識別される任意の `Agent` である可能性がある。  - `refObject`: アクションのオブジェクトへの参照 (例: Car1)。他の NGSI Entity や、URI で識別される任意の `Object` である可能性がある。  - `refTarget`: アクションのターゲットへの参照（例：Office1）。  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI Entity タイプ。UserActivityである必要があります。    
+必要なプロパティ  
+- `activityType`  - `id`  - `refAgent`  - `type`    
+このエンティティは、ユーザーが実行した現在のアクティビティを表します。これは、サイト上の社会的活動のモデル化（例：Federicoが自分の犬の写真を共有する）から実生活の活動（例：Federicoが車で通勤する）まで、さまざまなシナリオで使用することができます。このモデルは主に[https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core)に触発されたものである。このモデルは、以下の述語構造 `(Agent, Verb, Object*, Target*)` を用いてユーザの活動を表現する（ここで `Object` と `Target` は省略可能）。Agent` は属性 `refAgent` によって、`Verb` は `activityType` によって、`Object` は `refObject` によって、`Target` は `refTarget` によって特定される。  
+## プロパティのデータモデル記述  
+アルファベット順に並びます（クリックで詳細へ）  
 <details><summary><strong>full yaml details</strong></summary>    
-
-```yaml  
+```yaml  
 Activity:    
   description: 'Information on the current activity performed by an anonymized user in a given point in time'    
   properties:    
@@ -55,10 +25,41 @@ Activity:
       x-ngsi:    
         model: https://schema.org/Text    
         type: Property    
+    address:    
+      description: 'The mailing address'    
+      properties:    
+        addressCountry:    
+          description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''    
+          type: string    
+        addressLocality:    
+          description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''    
+          type: string    
+        addressRegion:    
+          description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''    
+          type: string    
+        postOfficeBoxNumber:    
+          description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''    
+          type: string    
+        postalCode:    
+          description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''    
+          type: string    
+        streetAddress:    
+          description: 'Property. The street address. Model:''https://schema.org/streetAddress'''    
+          type: string    
+      type: object    
+      x-ngsi:    
+        model: https://schema.org/address    
+        type: Property    
     alternateName:    
       description: 'An alternative name for this item'    
       type: string    
       x-ngsi:    
+        type: Property    
+    areaServed:    
+      description: 'The geographic area where a service or offered item is provided'    
+      type: string    
+      x-ngsi:    
+        model: https://schema.org/Text    
         type: Property    
     dataProvider:    
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'    
@@ -108,6 +109,159 @@ Activity:
       description: 'Unique identifier of the entity'    
       x-ngsi:    
         type: Property    
+    location:    
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
+      oneOf:    
+        - description: 'Geoproperty. Geojson reference to the item. Point'    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                type: number    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - Point    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: 'GeoJSON Point'    
+          type: object    
+        - description: 'Geoproperty. Geojson reference to the item. LineString'    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  type: number    
+                minItems: 2    
+                type: array    
+              minItems: 2    
+              type: array    
+            type:    
+              enum:    
+                - LineString    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: 'GeoJSON LineString'    
+          type: object    
+        - description: 'Geoproperty. Geojson reference to the item. Polygon'    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    type: number    
+                  minItems: 2    
+                  type: array    
+                minItems: 4    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - Polygon    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: 'GeoJSON Polygon'    
+          type: object    
+        - description: 'Geoproperty. Geojson reference to the item. MultiPoint'    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  type: number    
+                minItems: 2    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - MultiPoint    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: 'GeoJSON MultiPoint'    
+          type: object    
+        - description: 'Geoproperty. Geojson reference to the item. MultiLineString'    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    type: number    
+                  minItems: 2    
+                  type: array    
+                minItems: 2    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - MultiLineString    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: 'GeoJSON MultiLineString'    
+          type: object    
+        - description: 'Geoproperty. Geojson reference to the item. MultiLineString'    
+          properties:    
+            bbox:    
+              items:    
+                type: number    
+              minItems: 4    
+              type: array    
+            coordinates:    
+              items:    
+                items:    
+                  items:    
+                    items:    
+                      type: number    
+                    minItems: 2    
+                    type: array    
+                  minItems: 4    
+                  type: array    
+                type: array    
+              type: array    
+            type:    
+              enum:    
+                - MultiPolygon    
+              type: string    
+          required:    
+            - type    
+            - coordinates    
+          title: 'GeoJSON MultiPolygon'    
+          type: object    
+      x-ngsi:    
+        type: Geoproperty    
     name:    
       description: 'The name of this item.'    
       type: string    
@@ -173,30 +327,29 @@ Activity:
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI Entity type. It has to be UserActivity'    
+      description: 'NGSI Entity type. It has to be Activity'    
       enum:    
-        - UserActivity    
+        - Activity    
       type: string    
       x-ngsi:    
         type: Property    
   required:    
-    - activityType    
-    - refAgent    
     - type    
     - id    
   type: object    
+  x-derived-from: ""    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/Activity/LICENSE.md    
+  x-model-schema: https://smart-data-models.github.io/dataModel.User/Activity/schema.json    
+  x-model-tags: ""    
+  x-version: 0.1.0    
 ```  
 </details>    
-
-## ペイロードの例  
-
-#### 活動内容 NGSI-v2のキーバリューの例  
-
-Activityをkey-valuesとしてJSON-LD形式で出力した例です。これは`options=keyValues`を使った場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
-
-```json  
-
-{  
+## ペイロードの例  
+#### アクティビティ NGSI-v2 key-value 例  
+ここでは、ActivityをJSON-LD形式でkey-valuesにした例を示す。これは `options=keyValues` を使用した場合に NGSI-v2 と互換性があり、個々のエンティティのコンテキストデータが返される。  
+```json  
+{  
   "id": "UserActivity1",  
   "type": "UserActivity",  
   "activityType": "Drive",  
@@ -207,14 +360,10 @@ Activityをkey-valuesとしてJSON-LD形式で出力した例です。これは`
   "refAgent": "User1"  
 }  
 ```  
-
-#### 活動内容 NGSI-v2 正規化例  
-
-ここでは、正規化されたJSON-LD形式のActivityの例を示します。これは、オプションを使用しない場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
-
-```json  
-
-{  
+#### アクティビティ NGSI-v2 正規化例  
+以下は、正規化されたJSON-LD形式のActivityの例である。これはオプションを使用しない場合、NGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
   "id": "UserActivity1",  
   "type": "UserActivity",  
   "description": {  
@@ -241,73 +390,63 @@ Activityをkey-valuesとしてJSON-LD形式で出力した例です。これは`
   }  
 }  
 ```  
-
-#### 活動内容 NGSI-LDのキーバリューの例  
-
-Activityをkey-valuesとしてJSON-LD形式にした例です。これは`options=keyValues`を使った場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
-
-```json  
-
-{  
-  "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
-  "type": "UserActivity",  
-  "description": {  
-    "type": "Property",  
-    "value": "User1 drive Car1 to Office1"  
-  },  
-  "refTarget": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:Target:Office1"  
-  },  
-  "activityType": {  
-    "type": "Property",  
-    "value": "Drive"  
-  },  
-  "dateActivityStarted": {  
-    "type": "Property",  
-    "value": {  
-      "@type": "DateTime",  
-      "@value": "2016-11-30T07:00:00.00Z"  
-    }  
-  },  
-  "refAgent": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:Agent:User1"  
-  },  
-  "refObject": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:Object:Car1"  
-  },  
-  "@context": [  
-    "https://smartdatamodels.org/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+#### 活動内容 NGSI-LD キー値例  
+ここでは、ActivityをJSON-LD形式でkey-valuesにした例を示す。これは `options=keyValues` を使用した場合に NGSI-LD と互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
+    "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
+    "type": "UserActivity",  
+    "activityType": {  
+        "type": "Property",  
+        "value": "Drive"  
+    },  
+    "dateActivityStarted": {  
+        "type": "Property",  
+        "value": {  
+            "@type": "DateTime",  
+            "@value": "2016-11-30T07:00:00.00Z"  
+        }  
+    },  
+    "description": {  
+        "type": "Property",  
+        "value": "User1 drive Car1 to Office1"  
+    },  
+    "refAgent": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:Agent:User1"  
+    },  
+    "refObject": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:Object:Car1"  
+    },  
+    "refTarget": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:Target:Office1"  
+    },  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"  
+    ]  
 }  
 ```  
-
-#### 活動内容 NGSI-LDの正規化例  
-
-ここでは、正規化されたJSON-LD形式のActivityの例を示します。これは、オプションを使用しない場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
-
-```json  
-
-{  
-  "@context": [  
-    "https://smartdatamodels.org/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ],  
-  "activityType": "Drive",  
-  "dateActivityStarted": {  
-    "@type": "DateTime",  
-    "@value": "2016-11-30T07:00:00.00Z"  
-  },  
-  "description": "User1 drive Car1 to Office1",  
-  "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
-  "refAgent": "urn:ngsi-ld:Agent:User1",  
-  "refObject": "urn:ngsi-ld:Object:Car1",  
-  "refTarget": "urn:ngsi-ld:Target:Office1",  
-  "type": "UserActivity"  
+#### アクティビティ NGSI-LD 正規化例  
+以下は、正規化されたJSON-LD形式のActivityの例である。これはオプションを使用しない場合のNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
+    "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
+    "type": "UserActivity",  
+    "activityType": "Drive",  
+    "dateActivityStarted": {  
+        "@type": "DateTime",  
+        "@value": "2016-11-30T07:00:00.00Z"  
+    },  
+    "description": "User1 drive Car1 to Office1",  
+    "refAgent": "urn:ngsi-ld:Agent:User1",  
+    "refObject": "urn:ngsi-ld:Object:Car1",  
+    "refTarget": "urn:ngsi-ld:Target:Office1",  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
-```
-
-マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。
+```  
+マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
