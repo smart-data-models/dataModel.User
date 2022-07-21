@@ -1,10 +1,10 @@
 {
-    "@id": "dtmi:com:ngsi-ld:UserActivity;0",
+    "@id": "dtmi:com:ngsi-ld:Activity;0",
     "@type": "Interface",
     "@context": "dtmi:dtdl:context;2",
     "comment": "Smart Data Model - User Activity schema adapted to DTDL from smartdatamodels.org. Source: https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/Activity/schema.json",
     "description": "Information on the current activity performed by an anonymized user in a given point in time",
-    "displayName": "UserActivity",
+    "displayName": "Activity",
     "contents": [
         {
             "name": "activityType",
@@ -21,6 +21,14 @@
             "@type": "Property",
             "schema": "string",
             "comment": "An alternative name for this item"
+        },
+        {
+            "name": "areaServed",
+            "writable": true,
+            "displayName": "areaServed",
+            "@type": "Property",
+            "schema": "string",
+            "comment": "The geographic area where a service or offered item is provided"
         },
         {
             "name": "dataProvider",
@@ -115,6 +123,68 @@
             },
             "comment": "A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)",
             "displayName": "owner"
+        },
+        {
+            "@type": "object",
+            "name": "address",
+            "comment": "The mailing address",
+            "displayName": "address",
+            "fields": [
+                {
+                    "name": "addressCountry",
+                    "schema": "string"
+                },
+                {
+                    "name": "addressLocality",
+                    "schema": "string"
+                },
+                {
+                    "name": "addressRegion",
+                    "schema": "string"
+                },
+                {
+                    "name": "postOfficeBoxNumber",
+                    "schema": "string"
+                },
+                {
+                    "name": "postalCode",
+                    "schema": "string"
+                },
+                {
+                    "name": "streetAddress",
+                    "schema": "string"
+                }
+            ]
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_Point",
+            "schema": "point"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_LineString",
+            "schema": "lineString"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_Polygon",
+            "schema": "polygon"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_MultiPoint",
+            "schema": "multiPoint"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_MultiLineString",
+            "schema": "multiLineString"
+        },
+        {
+            "@type": "Telemetry",
+            "name": "location_MultiPolygon",
+            "schema": "multiPolygon"
         }
     ]
 }
