@@ -1,14 +1,16 @@
-Entità: UserContext  
+[![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
+Entità: UserContext  
 ===================  
 [Licenza aperta](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
 [documento generato automaticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-Descrizione globale: **Informazioni sul contesto di un anonimo in un dato momento**  
+Descrizione globale: **Informazioni sul contesto di una persona anonima in un determinato momento**.  
+versione: 0.0.2  
 
 ## Elenco delle proprietà  
 
-- `address`: L'indirizzo postale  - `alternateName`: Un nome alternativo per questa voce  - `areaServed`: L'area geografica in cui viene fornito un servizio o un articolo offerto  - `dataProvider`: Una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzata.  - `dateCreated`: Timestamp di creazione dell'entità. Questo sarà di solito assegnato dalla piattaforma di archiviazione.  - `dateModified`: Timestamp dell'ultima modifica dell'entità. Questo sarà di solito assegnato dalla piattaforma di archiviazione.  - `description`: Una descrizione di questo articolo  - `id`: Identificatore unico dell'entità  - `location`: Riferimento Geojson all'elemento. Può essere Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: Il nome di questo articolo.  - `owner`: Una lista contenente una sequenza di caratteri codificata in JSON che si riferisce agli ID unici dei proprietari  - `refActivity`: Un oggetto che rappresenta l'attività corrente eseguita dall'utente.  - `refUser`: Riferimento all'utente (anonimo) a cui questo UserContext è associato. Riferimenti normativi: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un oggetto che rappresenta il dispositivo corrente utilizzato dall'utente.  - `seeAlso`: elenco di uri che puntano a risorse aggiuntive sull'elemento  - `source`: Una sequenza di caratteri che dà la fonte originale dei dati dell'entità come URL. Si raccomanda di essere il nome di dominio completamente qualificato del fornitore di origine, o l'URL dell'oggetto di origine.  - `type`: Tipo di entità NGSI. Deve essere UserContext    
+- `address`: L'indirizzo postale  - `alternateName`: Un nome alternativo per questa voce  - `areaServed`: L'area geografica in cui viene fornito il servizio o l'articolo offerto.  - `dataProvider`: Una sequenza di caratteri che identifica il fornitore dell'entità di dati armonizzata.  - `dateCreated`: Timestamp di creazione dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione.  - `dateModified`: Timestamp dell'ultima modifica dell'entità. Di solito viene assegnato dalla piattaforma di archiviazione.  - `description`: Descrizione dell'articolo  - `id`: Identificatore univoco dell'entità  - `location`: Riferimento geojson all'elemento. Può essere un punto, una stringa di linea, un poligono, un multi-punto, una stringa di linea o un poligono multiplo.  - `name`: Il nome di questo elemento.  - `owner`: Un elenco contenente una sequenza di caratteri codificata JSON che fa riferimento agli ID univoci dei proprietari.  - `refActivity`: Un oggetto che rappresenta l'attività corrente eseguita dall'utente.  - `refUser`: Riferimento all'utente (anonimo) a cui è associato questo UserContext. Riferimenti normativi: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)  - `refUserDevice`: Un oggetto che rappresenta il dispositivo correntemente utilizzato dall'utente.  - `seeAlso`: elenco di uri che puntano a risorse aggiuntive sull'elemento  - `source`: Una sequenza di caratteri che indica la fonte originale dei dati dell'entità come URL. Si consiglia di utilizzare il nome di dominio completamente qualificato del provider di origine o l'URL dell'oggetto di origine.  - `type`: Tipo di entità NGSI. Deve essere UserContext    
 Proprietà richieste  
-- `id`  - `type`  ## Descrizione del modello di dati delle proprietà  
+- `id`  - `type`  ## Modello di dati descrizione delle proprietà  
 Ordinati in ordine alfabetico (clicca per i dettagli)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
@@ -254,9 +256,13 @@ UserContext:
         type: Property    
     refActivity:    
       anyOf:    
-        - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'An object representing the current activity performed by the User.'    
       x-ngsi:    
@@ -264,9 +270,13 @@ UserContext:
         type: Relationship    
     refUser:    
       anyOf:    
-        - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)'    
       x-ngsi:    
@@ -274,9 +284,13 @@ UserContext:
         type: Relationship    
     refUserDevice:    
       anyOf:    
-        - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'An object representing the current device used by the User.'    
       x-ngsi:    
@@ -310,11 +324,17 @@ UserContext:
     - id    
     - type    
   type: object    
+  x-derived-from: ""    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
+  x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/LICENSE.md    
+  x-model-schema: https://smart-data-models.github.io/dataModel.User/UserContext/schema.json    
+  x-model-tags: ""    
+  x-version: 0.0.2    
 ```  
 </details>    
-## Esempio di payloads  
-#### UserContext NGSI-v2 valori chiave Esempio  
-Ecco un esempio di UserContext in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
+## Esempi di payload  
+#### UserContext Valori chiave NGSI-v2 Esempio  
+Ecco un esempio di UserContext in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati del contesto di una singola entità.  
 ```json  
 {  
   "id": "UserContext1",  
@@ -329,7 +349,7 @@ UserContext:
 }  
 ```  
 #### UserContext NGSI-v2 normalizzato Esempio  
-Ecco un esempio di UserContext in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non usa opzioni e restituisce i dati di contesto di una singola entità.  
+Ecco un esempio di UserContext in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si usano le opzioni e restituisce i dati del contesto di una singola entità.  
 ```json  
 {  
   "id": "UserContext1",  
@@ -355,61 +375,59 @@ UserContext:
   }  
 }  
 ```  
-#### UserContext NGSI-LD valori-chiave Esempio  
-Ecco un esempio di UserContext in formato JSON-LD come key-values. Questo è compatibile con NGSI-LD quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
+#### UserContext Valori chiave NGSI-LD Esempio  
+Ecco un esempio di UserContext in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-LD quando si usa `options=keyValues` e restituisce i dati del contesto di una singola entità.  
 ```json  
 {  
-  "id": "urn:ngsi-ld:UserContext:UserContext1",  
-  "type": "UserContext",  
-  "refActivity": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:Activity:UserActivity1"  
-  },  
-  "location": {  
-    "type": "GeoProperty",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        -4.754444444,  
-        41.640833333  
-      ]  
-    }  
-  },  
-  "refUser": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:User:User1"  
-  },  
-  "refUserDevice": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:UserDevice:Device1"  
-  },  
-  "@context": [  
-    "https://smartdatamodels.org/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+    "id": "urn:ngsi-ld:UserContext:UserContext1",  
+    "type": "UserContext",  
+    "location": {  
+        "type": "GeoProperty",  
+        "value": {  
+            "type": "Point",  
+            "coordinates": [  
+                -4.754444444,  
+                41.640833333  
+            ]  
+        }  
+    },  
+    "refActivity": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:Activity:UserActivity1"  
+    },  
+    "refUser": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:User:User1"  
+    },  
+    "refUserDevice": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:UserDevice:Device1"  
+    },  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"  
+    ]  
 }  
 ```  
 #### UserContext NGSI-LD normalizzato Esempio  
-Ecco un esempio di UserContext in formato JSON-LD normalizzato. Questo è compatibile con NGSI-LD quando non usa opzioni e restituisce i dati di contesto di una singola entità.  
+Ecco un esempio di UserContext in formato JSON-LD normalizzato. Questo è compatibile con NGSI-LD quando non si usano le opzioni e restituisce i dati del contesto di una singola entità.  
 ```json  
 {  
-  "@context": [  
-    "https://smartdatamodels.org/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ],  
-  "id": "urn:ngsi-ld:UserContext:UserContext1",  
-  "location": {  
-    "coordinates": [  
-      -4.754444444,  
-      41.640833333  
-    ],  
-    "type": "Point"  
-  },  
-  "refActivity": "urn:ngsi-ld:Activity:UserActivity1",  
-  "refUser": "urn:ngsi-ld:User:User1",  
-  "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",  
-  "type": "UserContext"  
+    "id": "urn:ngsi-ld:UserContext:UserContext1",  
+    "type": "UserContext",  
+    "location": {  
+        "coordinates": [  
+            -4.754444444,  
+            41.640833333  
+        ],  
+        "type": "Point"  
+    },  
+    "refActivity": "urn:ngsi-ld:Activity:UserActivity1",  
+    "refUser": "urn:ngsi-ld:User:User1",  
+    "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
 ```  
-
-Vedere [FAQ 10](https://smartdatamodels.org/index.php/faqs/) per avere una risposta su come trattare le unità di grandezza
+Vedere [FAQ 10](https://smartdatamodels.org/index.php/faqs/) per ottenere una risposta su come gestire le unità di grandezza.  
