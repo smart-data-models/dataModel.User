@@ -4,13 +4,13 @@
 [Offene Lizenz](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
 [Dokument automatisch generiert](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 Globale Beschreibung: **Informationen über die aktuelle Aktivität eines anonymisierten Nutzers zu einem bestimmten Zeitpunkt**  
-Version: 0.0.1  
+Version: 0.1.1  
 
 ## Liste der Eigenschaften  
 
-- `activityType`: Die durchgeführte Aktion (z. B. Fahren). Normative Referenzen: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: Ein alternativer Name für diesen Artikel  - `dataProvider`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateActivityEnded`: Zeitstempel des Aktivitätsendes.  - `dateActivityStarted`: Sie muss gleich der UserActivity sein.  - `dateCreated`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description`: Eine Beschreibung dieses Artikels  - `id`: Eindeutiger Bezeichner der Entität  - `name`: Der Name dieses Artikels.  - `owner`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `refAgent`: Verweis auf den Agenten (d. h. eine Person), der die Aktivität ausführt. Dies kann eine andere NGSI-Entität oder ein beliebiger "Agent" sein, der durch einen URI identifiziert wird.  - `refObject`: Verweis auf das Objekt der Aktion (z. B. Auto1). Es kann eine andere NGSI-Entität oder ein beliebiges "Objekt" sein, das durch einen URI identifiziert wird.  - `refTarget`: Verweis auf das Ziel der Aktion (z. B. Office1).  - `seeAlso`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Empfohlen wird der voll qualifizierte Domänenname des Quellanbieters oder die URL des Quellobjekts.  - `type`: NGSI-Entitätstyp. Es muss UserActivity sein    
+- `activityType`: Die durchgeführte Aktion (z. B. Fahren). Normative Referenzen: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `address`: Die Postanschrift  - `alternateName`: Ein alternativer Name für diesen Artikel  - `areaServed`: Das geografische Gebiet, in dem eine Dienstleistung oder ein angebotener Artikel erbracht wird  - `dataProvider`: Eine Folge von Zeichen zur Identifizierung des Anbieters der harmonisierten Dateneinheit.  - `dateActivityEnded`: Zeitstempel des Aktivitätsendes.  - `dateActivityStarted`: Sie muss gleich der UserActivity sein.  - `dateCreated`: Zeitstempel der Entitätserstellung. Dieser wird in der Regel von der Speicherplattform zugewiesen.  - `dateModified`: Zeitstempel der letzten Änderung der Entität. Dieser wird in der Regel von der Speicherplattform vergeben.  - `description`: Eine Beschreibung dieses Artikels  - `id`: Eindeutiger Bezeichner der Entität  - `location`: Geojson-Referenz auf das Element. Es kann Punkt, LineString, Polygon, MultiPoint, MultiLineString oder MultiPolygon sein  - `name`: Der Name dieses Artikels.  - `owner`: Eine Liste mit einer JSON-kodierten Zeichenfolge, die auf die eindeutigen Kennungen der Eigentümer verweist  - `refAgent`: Verweis auf den Agenten (d. h. eine Person), der die Aktivität ausführt. Dies kann eine andere NGSI-Entität oder ein beliebiger "Agent" sein, der durch einen URI identifiziert wird.  - `refObject`: Verweis auf das Objekt der Aktion (z. B. Auto1). Es kann eine andere NGSI-Entität oder ein beliebiges "Objekt" sein, das durch einen URI identifiziert wird.  - `refTarget`: Verweis auf das Ziel der Aktion (z. B. Office1).  - `seeAlso`: Liste von URLs, die auf zusätzliche Ressourcen zu dem Artikel verweisen  - `source`: Eine Folge von Zeichen, die die ursprüngliche Quelle der Entitätsdaten als URL angibt. Es wird empfohlen, den voll qualifizierten Domänennamen des Quellanbieters oder die URL des Quellobjekts zu verwenden.  - `type`: NGSI-Entitätstyp. Es muss Aktivität sein    
 Erforderliche Eigenschaften  
-- `activityType`  - `id`  - `refAgent`  - `type`    
+- `id`  - `type`    
 Diese Entität stellt die aktuelle Aktivität eines Benutzers dar. Sie kann in verschiedenen Szenarien verwendet werden, von der Modellierung sozialer Aktivitäten auf einer Website (z. B. Federico teilt ein Bild seines Hundes) bis hin zu Aktivitäten im wirklichen Leben (z. B. Federico fährt mit seinem Auto zur Arbeit). Das Modell ist weitgehend inspiriert von [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). Das Modell repräsentiert Benutzeraktivitäten unter Verwendung der folgenden Prädikatsstruktur `(Agent, Verb, Objekt*, Ziel*)`, wobei `Objekt` und `Ziel` optional sind. Der `Agent` wird durch das Attribut `refAgent` identifiziert, das `Verb` wird durch `activityType` identifiziert, das `Object` wird durch `refObject` identifiziert und das `Target` wird durch `refTarget` identifiziert.  
 ## Datenmodell Beschreibung der Eigenschaften  
 Alphabetisch sortiert (für Details anklicken)  
@@ -277,9 +277,13 @@ Activity:
         type: Property    
     refAgent:    
       anyOf:    
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'    
       x-ngsi:    
@@ -301,9 +305,13 @@ Activity:
         type: Relationship    
     refTarget:    
       anyOf:    
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the target of the action (e.g. Office1).'    
       x-ngsi:    
@@ -338,16 +346,16 @@ Activity:
     - id    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/Activity/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.User/Activity/schema.json    
   x-model-tags: ""    
-  x-version: 0.1.0    
+  x-version: 0.1.1    
 ```  
 </details>    
 ## Beispiel-Nutzlasten  
 #### Aktivität NGSI-v2 Schlüsselwerte Beispiel  
-Hier ist ein Beispiel für eine Aktivität im JSON-LD-Format als Key-Values. Dies ist kompatibel mit NGSI-v2, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für eine Aktivität im JSON-LD-Format als Key-Values. Dies ist mit NGSI-v2 kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 ```json  
 {  
   "id": "UserActivity1",  
