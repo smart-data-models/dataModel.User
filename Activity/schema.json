@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.1.1",
   "modelTags": "",
   "$id": "https://smart-data-models.github.io/dataModel.User/Activity/schema.json",
   "title": "Smart Data Model - User Activity schema",
@@ -10,7 +10,7 @@
     {
       "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
     },
-      {
+    {
       "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
     },
     {
@@ -47,28 +47,38 @@
           "description": "Property. Model:'https://schema.org/Text'. The action performed (e.g. Drive). Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)"
         },
         "refTarget": {
-          "description": "Relationship. Model:'https://schema.org/URL'. Reference to the target of the action (e.g. Office1).",
           "anyOf": [
             {
-              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "description": "Property. Identifier format of any NGSI entity"
             },
             {
               "type": "string",
-              "format": "uri"
+              "format": "uri",
+              "description": "Property. Identifier format of any NGSI entity"
             }
-          ]
+          ],
+          "description": "Relationship. Model:'https://schema.org/URL'. Reference to the target of the action (e.g. Office1)."
         },
         "refAgent": {
-          "description": "Relationship. Model:'https://schema.org/URL'. Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.",
           "anyOf": [
             {
-              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "description": "Property. Identifier format of any NGSI entity"
             },
             {
               "type": "string",
-              "format": "uri"
+              "format": "uri",
+              "description": "Property. Identifier format of any NGSI entity"
             }
-          ]
+          ],
+          "description": "Relationship. Model:'https://schema.org/URL'. Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI."
         },
         "type": {
           "type": "string",
