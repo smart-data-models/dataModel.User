@@ -1,8 +1,10 @@
-Entidad: UserContext  
+[![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
+Entidad: UserContext  
 ====================  
 [Licencia abierta](https://github.com/smart-data-models//dataModel.User/blob/master/UserContext/LICENSE.md)  
 [documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 Descripción global: **Información sobre el contexto de un anónimo en un momento dado**  
+versión: 0.0.2  
 
 ## Lista de propiedades  
 
@@ -254,9 +256,13 @@ UserContext:
         type: Property    
     refActivity:    
       anyOf:    
-        - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'An object representing the current activity performed by the User.'    
       x-ngsi:    
@@ -264,9 +270,13 @@ UserContext:
         type: Relationship    
     refUser:    
       anyOf:    
-        - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the (anonymised) User to which this UserContext is associated. Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)'    
       x-ngsi:    
@@ -274,9 +284,13 @@ UserContext:
         type: Relationship    
     refUserDevice:    
       anyOf:    
-        - anyOf: *usercontext_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'An object representing the current device used by the User.'    
       x-ngsi:    
@@ -310,6 +324,12 @@ UserContext:
     - id    
     - type    
   type: object    
+  x-derived-from: ""    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
+  x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/LICENSE.md    
+  x-model-schema: https://smart-data-models.github.io/dataModel.User/UserContext/schema.json    
+  x-model-tags: ""    
+  x-version: 0.0.2    
 ```  
 </details>    
 ## Ejemplo de carga útil  
@@ -359,57 +379,55 @@ UserContext:
 Aquí hay un ejemplo de un UserContext en formato JSON-LD como valores-clave. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
-  "id": "urn:ngsi-ld:UserContext:UserContext1",  
-  "type": "UserContext",  
-  "refActivity": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:Activity:UserActivity1"  
-  },  
-  "location": {  
-    "type": "GeoProperty",  
-    "value": {  
-      "type": "Point",  
-      "coordinates": [  
-        -4.754444444,  
-        41.640833333  
-      ]  
-    }  
-  },  
-  "refUser": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:User:User1"  
-  },  
-  "refUserDevice": {  
-    "type": "Relationship",  
-    "object": "urn:ngsi-ld:UserDevice:Device1"  
-  },  
-  "@context": [  
-    "https://smartdatamodels.org/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ]  
+    "id": "urn:ngsi-ld:UserContext:UserContext1",  
+    "type": "UserContext",  
+    "location": {  
+        "type": "GeoProperty",  
+        "value": {  
+            "type": "Point",  
+            "coordinates": [  
+                -4.754444444,  
+                41.640833333  
+            ]  
+        }  
+    },  
+    "refActivity": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:Activity:UserActivity1"  
+    },  
+    "refUser": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:User:User1"  
+    },  
+    "refUserDevice": {  
+        "type": "Relationship",  
+        "object": "urn:ngsi-ld:UserDevice:Device1"  
+    },  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"  
+    ]  
 }  
 ```  
 #### UserContext NGSI-LD normalizado Ejemplo  
 Este es un ejemplo de un UserContext en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
-  "@context": [  
-    "https://smartdatamodels.org/context.jsonld",  
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
-  ],  
-  "id": "urn:ngsi-ld:UserContext:UserContext1",  
-  "location": {  
-    "coordinates": [  
-      -4.754444444,  
-      41.640833333  
-    ],  
-    "type": "Point"  
-  },  
-  "refActivity": "urn:ngsi-ld:Activity:UserActivity1",  
-  "refUser": "urn:ngsi-ld:User:User1",  
-  "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",  
-  "type": "UserContext"  
+    "id": "urn:ngsi-ld:UserContext:UserContext1",  
+    "type": "UserContext",  
+    "location": {  
+        "coordinates": [  
+            -4.754444444,  
+            41.640833333  
+        ],  
+        "type": "Point"  
+    },  
+    "refActivity": "urn:ngsi-ld:Activity:UserActivity1",  
+    "refUser": "urn:ngsi-ld:User:User1",  
+    "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",  
+    "@context": [  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+    ]  
 }  
 ```  
-
-Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud
+Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud  
