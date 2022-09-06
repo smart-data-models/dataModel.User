@@ -259,9 +259,13 @@ Activity:
         type: Property
     refAgent:
       anyOf:
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof
-          description: 'Property. Unique identifier of the entity'
-        - format: uri
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
           type: string
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'
       x-ngsi:
@@ -283,9 +287,13 @@ Activity:
         type: Relationship
     refTarget:
       anyOf:
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof
-          description: 'Property. Unique identifier of the entity'
-        - format: uri
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
           type: string
       description: 'Reference to the target of the action (e.g. Office1).'
       x-ngsi:
@@ -320,8 +328,8 @@ Activity:
     - id
   type: object
   x-derived-from: ""
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/Activity/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.User/Activity/schema.json
   x-model-tags: ""
-  x-version: 0.1.0
+  x-version: 0.1.1
