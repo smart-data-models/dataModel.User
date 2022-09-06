@@ -4,13 +4,13 @@
 [Licence ouverte] (https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
 [document généré automatiquement] (https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 Description globale : **Information sur l'activité actuelle réalisée par un utilisateur anonyme à un moment donné**.  
-version : 0.0.1  
+version : 0.1.1  
 
 ## Liste des propriétés  
 
-- `activityType`: L'action effectuée (par exemple, conduire). Références normatives : [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: Un nom alternatif pour cet élément  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateActivityEnded`: Horodatage de fin d'activité.  - `dateActivityStarted`: Il doit être égal à UserActivity.  - `dateCreated`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description`: Une description de cet article  - `id`: Identifiant unique de l'entité  - `name`: Le nom de cet élément.  - `owner`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `refAgent`: Référence à l'agent (c'est-à-dire une personne) réalisant l'activité. Il peut s'agir d'une autre entité NGSI ou de tout `Agent` identifié par un URI.  - `refObject`: Référence à l'objet de l'action (par exemple, Car1). Il peut s'agir d'une autre entité NGSI ou de tout `Objet` identifié par un URI.  - `refTarget`: Référence à la cible de l'action (par exemple, Bureau1).  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur l'élément  - `source`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il doit s'agir de UserActivity    
+- `activityType`: L'action effectuée (par exemple, conduire). Références normatives : [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `address`: L'adresse postale  - `alternateName`: Un nom alternatif pour cet élément  - `areaServed`: La zone géographique où un service ou un article offert est fourni  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateActivityEnded`: Horodatage de fin d'activité.  - `dateActivityStarted`: Il doit être égal à UserActivity.  - `dateCreated`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description`: Une description de cet article  - `id`: Identifiant unique de l'entité  - `location`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `name`: Le nom de cet élément.  - `owner`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `refAgent`: Référence à l'agent (c'est-à-dire une personne) qui réalise l'activité. Il peut s'agir d'une autre entité NGSI ou de tout `Agent` identifié par un URI.  - `refObject`: Référence à l'objet de l'action (par exemple, Car1). Il peut s'agir d'une autre entité NGSI ou de tout `Objet` identifié par un URI.  - `refTarget`: Référence à la cible de l'action (par exemple, Bureau1).  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur l'article  - `source`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il doit s'agir d'une activité    
 Propriétés requises  
-- `activityType`  - `id`  - `refAgent`  - `type`    
+- `id`  - `type`    
 Cette entité représente l'activité actuelle d'un utilisateur. Elle peut être utilisée dans différents scénarios, de la modélisation des activités sociales sur un site (par exemple, Federico partage une photo de son chien) aux activités de la vie réelle (par exemple, Federico conduit sa voiture au travail). Le modèle est largement inspiré de [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). Le modèle représente les activités des utilisateurs en utilisant la structure de prédicat suivante `(Agent, Verb, Object*, Target*)`, où `Object` et `Target` sont optionnels. L' `Agent` est identifié par l'attribut `refAgent`, le `Verb` est identifié par `activityType`, l' `Object` est identifié par `refObject`, et la `Target` est identifiée par `refTarget`.  
 ## Description des propriétés du modèle de données  
 Classés par ordre alphabétique (cliquez pour plus de détails)  
@@ -277,9 +277,13 @@ Activity:
         type: Property    
     refAgent:    
       anyOf:    
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'    
       x-ngsi:    
@@ -301,9 +305,13 @@ Activity:
         type: Relationship    
     refTarget:    
       anyOf:    
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the target of the action (e.g. Office1).'    
       x-ngsi:    
@@ -338,11 +346,11 @@ Activity:
     - id    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/Activity/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.User/Activity/schema.json    
   x-model-tags: ""    
-  x-version: 0.1.0    
+  x-version: 0.1.1    
 ```  
 </details>    
 ## Exemples de charges utiles  
