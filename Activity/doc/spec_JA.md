@@ -4,13 +4,13 @@
 [オープンライセンス](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
 [ドキュメント自動生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 グローバルな記述です。**ある匿名化されたユーザーが、ある時点で行った現在の活動に関する情報**。  
-バージョン: 0.0.1  
+バージョン: 0.1.1  
 
 ## プロパティ一覧  
 
-- `activityType`: 実行された動作（例：ドライブ）。規範となる参考文献。[https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `alternateName`: この項目の別称  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateActivityEnded`: アクティビティの終了タイムスタンプ。  - `dateActivityStarted`: UserActivityと等しくなければならない。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリスト  - `refAgent`: アクティビティを実行するエージェント(すなわち人)への参照。別の NGSI エンティティ、または URI で識別される任意の `Agent` である可能性がある。  - `refObject`: アクションのオブジェクトへの参照 (例: Car1)。他の NGSI Entity や、URI で識別される任意の `Object` である可能性がある。  - `refTarget`: アクションのターゲットへの参照（例：Office1）。  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI Entity タイプ。UserActivityである必要があります。    
+- `activityType`: 実行された動作（例：ドライブ）。規範となる参考文献。[https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `address`: 郵送先住所  - `alternateName`: この項目の別称  - `areaServed`: サービスまたは提供品が提供される地理的な地域  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateActivityEnded`: アクティビティの終了タイムスタンプ。  - `dateActivityStarted`: UserActivityと等しくなければならない。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `location`: アイテムへの Geojson リファレンス。Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygonのいずれかを指定することができる。  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリスト  - `refAgent`: アクティビティを実行するエージェント(すなわち人)への参照。別の NGSI エンティティ、または URI で識別される任意の `Agent` である可能性がある。  - `refObject`: アクションのオブジェクトへの参照 (例: Car1)。他の NGSI Entity や、URI で識別される任意の `Object` である可能性がある。  - `refTarget`: アクションのターゲットへの参照（例：Office1）。  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI Entity タイプ。これはアクティビティでなければなりません。    
 必要なプロパティ  
-- `activityType`  - `id`  - `refAgent`  - `type`    
+- `id`  - `type`    
 このエンティティは、ユーザーが実行した現在のアクティビティを表します。これは、サイト上の社会的活動のモデル化（例：Federicoが自分の犬の写真を共有する）から実生活の活動（例：Federicoが車で通勤する）まで、さまざまなシナリオで使用することができます。このモデルは主に[https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core)に触発されたものである。このモデルは、以下の述語構造 `(Agent, Verb, Object*, Target*)` を用いてユーザの活動を表現する（ここで `Object` と `Target` は省略可能）。Agent` は属性 `refAgent` によって、`Verb` は `activityType` によって、`Object` は `refObject` によって、`Target` は `refTarget` によって特定される。  
 ## プロパティのデータモデル記述  
 アルファベット順に並びます（クリックで詳細へ）  
@@ -277,9 +277,13 @@ Activity:
         type: Property    
     refAgent:    
       anyOf:    
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.'    
       x-ngsi:    
@@ -301,9 +305,13 @@ Activity:
         type: Relationship    
     refTarget:    
       anyOf:    
-        - anyOf: *activity_-_properties_-_owner_-_items_-_anyof    
-          description: 'Property. Unique identifier of the entity'    
-        - format: uri    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+        - description: 'Property. Identifier format of any NGSI entity'    
+          format: uri    
           type: string    
       description: 'Reference to the target of the action (e.g. Office1).'    
       x-ngsi:    
@@ -338,11 +346,11 @@ Activity:
     - id    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.User/blob/master/Activity/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.User/Activity/schema.json    
   x-model-tags: ""    
-  x-version: 0.1.0    
+  x-version: 0.1.1    
 ```  
 </details>    
 ## ペイロードの例  
