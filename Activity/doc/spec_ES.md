@@ -1,19 +1,32 @@
+<!-- 10-Header -->  
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
 Entidad: Actividad  
-==================  
+==================<!-- /10-Header -->  
+<!-- 15-License -->  
 [Licencia abierta](https://github.com/smart-data-models//dataModel.User/blob/master/Activity/LICENSE.md)  
 [documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+<!-- /15-License -->  
+<!-- 20-Description -->  
 Descripción global: **Información sobre la actividad actual realizada por un usuario anónimo en un momento determinado**  
 versión: 0.1.1  
+<!-- /20-Description -->  
+<!-- 30-PropertiesList -->  
 
 ## Lista de propiedades  
 
-- `activityType`: La acción realizada (por ejemplo, conducir). Referencias normativas: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  - `address`: La dirección postal  - `alternateName`: Un nombre alternativo para este artículo  - `areaServed`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateActivityEnded`: Fecha de finalización de la actividad.  - `dateActivityStarted`: Debe ser igual a UserActivity.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `location`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `refAgent`: Referencia al agente (es decir, una persona) que realiza la actividad. Puede ser otra entidad NGSI o cualquier "agente" identificado por un URI.  - `refObject`: Referencia al objeto de la acción (por ejemplo, coche1). Puede ser otra entidad NGSI o cualquier `Objeto` identificado por un URI.  - `refTarget`: Referencia al objetivo de la acción (por ejemplo, Oficina1).  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. Tiene que ser Actividad    
+<sup><sub>[*] Si no hay un tipo en un atributo es porque puede tener varios tipos o diferentes formatos/patrones</sub></sup>  
+- `activityType[string]`: La acción realizada (por ejemplo, conducir). Referencias normativas: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)  . Model: [https://schema.org/Text](https://schema.org/Text)- `address[object]`: La dirección postal  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `dataProvider[string]`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateActivityEnded[string]`: Fecha de finalización de la actividad.  . Model: [https://schema.org/DateTime](https://schema.org/DateTime)- `dateActivityStarted[string]`: Debe ser igual a UserActivity.  - `dateCreated[string]`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified[string]`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description[string]`: Una descripción de este artículo  - `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name[string]`: El nombre de este artículo.  - `owner[array]`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `refAgent[*]`: Referencia al agente (es decir, una persona) que realiza la actividad. Puede ser otra entidad NGSI o cualquier "agente" identificado por un URI.  . Model: [https://schema.org/URL](https://schema.org/URL)- `refObject[*]`: Referencia al objeto de la acción (por ejemplo, coche1). Puede ser otra entidad NGSI o cualquier `Objeto` identificado por un URI.  . Model: [https://schema.org/URL](https://schema.org/URL)- `refTarget[*]`: Referencia al objetivo de la acción (por ejemplo, Oficina1).  . Model: [https://schema.org/URL](https://schema.org/URL)- `seeAlso[*]`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source[string]`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type[string]`: Tipo de entidad NGSI. Tiene que ser Actividad  <!-- /30-PropertiesList -->  
+<!-- 35-RequiredProperties -->  
 Propiedades requeridas  
-- `id`  - `type`    
-Esta entidad representa la actividad actual realizada por un usuario. Se puede utilizar en diferentes escenarios, desde el modelado de actividades sociales en un sitio (por ejemplo, Federico comparte una foto de su perro) hasta actividades de la vida real (por ejemplo, Federico conduce su coche al trabajo). El modelo se inspira en gran medida en [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). El modelo representa las actividades del usuario utilizando la siguiente estructura de predicado `(Agente, Verbo, Objeto*, Objetivo*)`, donde `Objeto` y `Objetivo` son opcionales. El `Agente` se identifica con el atributo `refAgente`, el `Verbo` se identifica con el `tipo de actividad`, el `Objeto` se identifica con el `refObjeto`, y el `Objetivo` se identifica con el `refObjetivo`.  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
+<!-- 40-RequiredProperties -->  
+Esta entidad representa la actividad actual realizada por un usuario. Puede utilizarse en diferentes escenarios, desde el modelado de actividades sociales en un sitio (por ejemplo, Federico comparte una foto de su perro) hasta actividades de la vida real (por ejemplo, Federico conduce su coche al trabajo). El modelo se inspira en gran medida en [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core). El modelo representa las actividades del usuario utilizando la siguiente estructura de predicado `(Agente, Verbo, Objeto*, Objetivo*)`, donde `Objeto` y `Objetivo` son opcionales. El `Agente` se identifica con el atributo `refAgente`, el `Verbo` se identifica con el `tipo de actividad`, el `Objeto` se identifica con el `refObjeto`, y el `Objetivo` se identifica con el `refObjetivo`.  
+<!-- /40-RequiredProperties -->  
+<!-- 50-DataModelHeader -->  
 ## Descripción del modelo de datos de las propiedades  
 Ordenados alfabéticamente (haga clic para ver los detalles)  
+<!-- /50-DataModelHeader -->  
+<!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 Activity:    
@@ -353,9 +366,14 @@ Activity:
   x-version: 0.1.1    
 ```  
 </details>    
+<!-- /60-ModelYaml -->  
+<!-- 70-MiddleNotes -->  
+<!-- /70-MiddleNotes -->  
+<!-- 80-Examples -->  
 ## Ejemplo de carga útil  
 #### Actividad NGSI-v2 key-values Ejemplo  
 Aquí hay un ejemplo de una actividad en formato JSON-LD como valores-clave. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "id": "UserActivity1",  
@@ -368,8 +386,10 @@ Activity:
   "refAgent": "User1"  
 }  
 ```  
+</details>  
 #### Actividad NGSI-v2 normalizada Ejemplo  
-Aquí hay un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+Este es un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
   "id": "UserActivity1",  
@@ -398,8 +418,10 @@ Activity:
   }  
 }  
 ```  
+</details>  
 #### Actividad NGSI-LD key-values Ejemplo  
 Aquí hay un ejemplo de una actividad en formato JSON-LD como valores-clave. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
     "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
@@ -437,8 +459,10 @@ Activity:
     ]  
 }  
 ```  
+</details>  
 #### Actividad NGSI-LD normalizada Ejemplo  
 Este es un ejemplo de una actividad en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+<details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
     "id": "urn:ngsi-ld:UserActivity:UserActivity1",  
@@ -453,8 +477,17 @@ Activity:
     "refObject": "urn:ngsi-ld:Object:Car1",  
     "refTarget": "urn:ngsi-ld:Target:Office1",  
     "@context": [  
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"  
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"  
     ]  
 }  
 ```  
+</details><!-- /80-Examples -->  
+<!-- 90-FooterNotes -->  
+<!-- /90-FooterNotes -->  
+<!-- 95-Units -->  
 Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud  
+<!-- /95-Units -->  
+<!-- 97-LastFooter -->  
+---  
+[Smart Data Models](https://smartdatamodels.org) +++ [Contribution Manual](https://bit.ly/contribution_manual) +++ [About](https://bit.ly/Introduction_SDM)<!-- /97-LastFooter -->  
