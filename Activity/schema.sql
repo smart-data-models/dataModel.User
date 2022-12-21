@@ -1,0 +1,2 @@
+/* (Beta) Export of data model Activity of the subject dataModel.User for a postgreSQL database to be inserted in a this relational database /*
+CREATE TABLE Activity (activityType text, address json, alternateName text, areaServed text, dataProvider text, description text, name text, owner json, source text, type text)
