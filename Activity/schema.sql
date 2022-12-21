@@ -1,2 +1,3 @@
-/* (Beta) Export of data model Activity of the subject dataModel.User for a postgreSQL database to be inserted in a this relational database */
-CREATE TABLE Activity (activityType text, address json, alternateName text, areaServed text, dataProvider text, description text, name text, owner json, source text, type text)
+/* (Beta) Export of data model Activity of the subject dataModel.User for a postgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE Activity_type AS ENUM ('Activity');
+CREATE TABLE Activity (activityType text, address json, alternateName text, areaServed text, dataProvider text, dateActivityEnded timestamp, dateActivityStarted timestamp, dateCreated timestamp, dateModified timestamp, description text, id text, location json, name text, owner json, refAgent text, refObject text, refTarget text, seeAlso json, source text, type Activity_type);
