@@ -1,1 +1,0 @@
-CREATE TABLE Activity (activityType text, address json, alternateName text, areaServed text, dataProvider text, description text, name text, owner json, source text, type text)
