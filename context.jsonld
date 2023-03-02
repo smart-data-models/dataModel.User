@@ -1,5 +1,7 @@
 {
     "@context": {
+        "Activity": "https://smartdatamodels.org/dataModel.User/Activity",
+        "UserContext": "https://smartdatamodels.org/dataModel.User/UserContext",
         "activityType": "https://smartdatamodels.org/dataModel.User/activityType",
         "address": "https://smartdatamodels.org/address",
         "alternateName": "https://smartdatamodels.org/alternateName",
