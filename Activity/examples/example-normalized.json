@@ -2,13 +2,15 @@
   "id": "UserActivity1",
   "type": "UserActivity",
   "description": {
+    "type": "Text",
     "value": "User1 drive Car1 to Office1"
   },
   "refTarget": {
-    "type": "Relationship",
+    "type": "URI",
     "value": "Office1"
   },
   "activityType": {
+    "type": "Text",
     "value": "Drive"
   },
   "dateActivityStarted": {
@@ -16,11 +18,11 @@
     "value": "2016-11-30T07:00:00.00Z"
   },
   "refAgent": {
-    "type": "Relationship",
+    "type": "URI",
     "value": "User1"
   },
   "refObject": {
-    "type": "Relationship",
+    "type": "URI",
     "value": "Car1"
   }
 }
