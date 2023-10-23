@@ -1,6 +1,6 @@
 {
   "id": "urn:ngsi-ld:UserActivity:UserActivity1",
-  "type": "UserActivity",
+  "type": "Activity",
   "activityType": "Drive",
   "dateActivityStarted": "2016-11-30T07:00:00.00Z",
   "description": "User1 drive Car1 to Office1",
