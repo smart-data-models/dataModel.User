@@ -1,6 +1,6 @@
 {
     "id": "urn:ngsi-ld:UserActivity:UserActivity1",
-    "type": "UserActivity",
+    "type": "Activity",
     "activityType": {
         "type": "Property",
         "value": "Drive"
