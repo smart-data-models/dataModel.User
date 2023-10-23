@@ -1,6 +1,6 @@
 {
   "id": "UserActivity1",
-  "type": "UserActivity",
+  "type": "Activity",
   "description": {
     "type": "Text",
     "value": "User1 drive Car1 to Office1"
