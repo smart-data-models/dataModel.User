@@ -1,3 +1,3 @@
 /* (Beta) Export of data model UserContext of the subject dataModel.User for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 CREATE TYPE UserContext_type AS ENUM ('UserContext');
-CREATE TABLE UserContext (address JSON, alternateName TEXT, areaServed TEXT, dataProvider TEXT, dateCreated TIMESTAMP, dateModified TIMESTAMP, description TEXT, name TEXT, owner JSON, source TEXT, type UserContext_type);
+CREATE TABLE UserContext (address JSON, alternateName TEXT, areaServed TEXT, dataProvider TEXT, dateCreated TIMESTAMP, dateModified TIMESTAMP, description TEXT, id TEXT PRIMARY KEY, location JSON, name TEXT, owner JSON, seeAlso JSON, source TEXT, type UserContext_type);
