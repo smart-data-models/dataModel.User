@@ -1,2 +1,2 @@
 "id_", "type_", "description__type_", "description__value_", "refTarget__type_", "refTarget__value_", "activityType__type_", "activityType__value_", "dateActivityStarted__type_", "dateActivityStarted__value_", "refAgent__type_", "refAgent__value_", "refObject__type_", "refObject__value_"
-"UserActivity1", "UserActivity", "Text", "User1 drive Car1 to Office1", "URI", "Office1", "Text", "Drive", "DateTime", "2016-11-30T07:00:00.00Z", "URI", "User1", "URI", "Car1"
+"UserActivity1", "Activity", "Text", "User1 drive Car1 to Office1", "URI", "Office1", "Text", "Drive", "DateTime", "2016-11-30T07:00:00.00Z", "URI", "User1", "URI", "Car1"
