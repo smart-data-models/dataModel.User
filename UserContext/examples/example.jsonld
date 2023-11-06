@@ -2,27 +2,15 @@
     "id": "urn:ngsi-ld:UserContext:UserContext1",
     "type": "UserContext",
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Point",
-            "coordinates": [
-                -4.754444444,
-                41.640833333
-            ]
-        }
+        "coordinates": [
+            -4.754444444,
+            41.640833333
+        ],
+        "type": "Point"
     },
-    "refActivity": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:Activity:UserActivity1"
-    },
-    "refUser": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:User:User1"
-    },
-    "refUserDevice": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:UserDevice:Device1"
-    },
+    "refActivity": "urn:ngsi-ld:Activity:UserActivity1",
+    "refUser": "urn:ngsi-ld:User:User1",
+    "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",
     "@context": [
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
         "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
