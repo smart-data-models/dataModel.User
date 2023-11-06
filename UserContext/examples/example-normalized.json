@@ -2,7 +2,7 @@
   "id": "UserContext1",
   "type": "UserContext",
   "refActivity": {
-    "type": "Relationship",
+    "type": "Text",
     "value": "UserActivity1"
   },
   "location": {
@@ -13,11 +13,11 @@
     }
   },
   "refUser": {
-    "type": "Relationship",
+    "type": "Text",
     "value": "User1"
   },
   "refUserDevice": {
-    "type": "Relationship",
+    "type": "Text",
     "value": "Device1"
   }
 }
