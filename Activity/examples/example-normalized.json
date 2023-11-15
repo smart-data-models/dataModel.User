@@ -6,7 +6,7 @@
     "value": "User1 drive Car1 to Office1"
   },
   "refTarget": {
-    "type": "URI",
+    "type": "Text",
     "value": "Office1"
   },
   "activityType": {
@@ -18,11 +18,11 @@
     "value": "2016-11-30T07:00:00.00Z"
   },
   "refAgent": {
-    "type": "URI",
+    "type": "Text",
     "value": "User1"
   },
   "refObject": {
-    "type": "URI",
+    "type": "Text",
     "value": "Car1"
   }
 }
