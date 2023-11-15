@@ -1,12 +1,12 @@
 {
-  "id": "urn:ngsi-ld:UserActivity:UserActivity1",
+  "id": "UserActivity1",
   "type": "Activity",
   "activityType": "Drive",
-  "dateActivityStarted": "2016-11-30T07:00:00.00Z",
   "description": "User1 drive Car1 to Office1",
-  "refAgent": "urn:ngsi-ld:Agent:User1",
-  "refObject": "urn:ngsi-ld:Object:Car1",
-  "refTarget": "urn:ngsi-ld:Target:Office1",
+  "dateActivityStarted": "2016-11-30T07:00:00.00Z",
+  "refObject": "Car1",
+  "refTarget": "Office1",
+  "refAgent": "User1",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
