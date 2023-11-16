@@ -1,16 +1,16 @@
 {
-  "id": "UserContext1",
+  "id": "urn:ngsi-ld:UserContext:UserContext1",
   "type": "UserContext",
   "location": {
-    "type": "Point",
     "coordinates": [
       -4.754444444,
       41.640833333
-    ]
+    ],
+    "type": "Point"
   },
-  "refActivity": "UserActivity1",
-  "refUserDevice": "Device1",
-  "refUser": "User1",
+  "refActivity": "urn:ngsi-ld:Activity:UserActivity1",
+  "refUser": "urn:ngsi-ld:User:User1",
+  "refUserDevice": "urn:ngsi-ld:UserDevice:Device1",
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
