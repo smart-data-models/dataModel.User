@@ -1,4 +1,4 @@
-# Activity
+# UserContext
 
 ### List of code samples 
 
@@ -6,8 +6,6 @@
 
 <!-- [code entry](link) -->
 [code_for_using_dataModel.User_UserContext.py](https://github.com/smart-data-models/dataModel.User/blob/master/UserContext/code/code_for_using_dataModel.User_UserContext.py)
-
-[code_for_using_dataModel.User_Activity.py](https://github.com/smart-data-models/dataModel.User/blob/master/Activity/code/code_for_using_dataModel.User_Activity.py)
 
 
 <!-- /50-List of code -->
