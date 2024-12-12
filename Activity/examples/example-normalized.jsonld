@@ -1,34 +1,34 @@
 {
-    "id": "urn:ngsi-ld:UserActivity:UserActivity1",
-    "type": "Activity",
-    "activityType": {
-        "type": "Property",
-        "value": "Drive"
-    },
-    "dateActivityStarted": {
-        "type": "Property",
-        "value": {
-            "@type": "DateTime",
-            "@value": "2016-11-30T07:00:00.00Z"
-        }
-    },
-    "description": {
-        "type": "Property",
-        "value": "User1 drive Car1 to Office1"
-    },
-    "refAgent": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:Agent:User1"
-    },
-    "refObject": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:Object:Car1"
-    },
-    "refTarget": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:Target:Office1"
-    },
-    "@context": [
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
-    ]
+  "id": "urn:ngsi-ld:UserActivity:UserActivity1",
+  "type": "Activity",
+  "activityType": {
+    "type": "Property",
+    "value": "Drive"
+  },
+  "dateActivityStarted": {
+    "type": "Property",
+    "value": {
+      "@type": "DateTime",
+      "@value": "2016-11-30T07:00:00.00Z"
+    }
+  },
+  "description": {
+    "type": "Property",
+    "value": "User1 drive Car1 to Office1"
+  },
+  "refAgent": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Agent:User1"
+  },
+  "refObject": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Object:Car1"
+  },
+  "refTarget": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Target:Office1"
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
+  ]
 }

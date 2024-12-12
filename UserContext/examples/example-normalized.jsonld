@@ -1,29 +1,29 @@
 {
-    "id": "urn:ngsi-ld:UserContext:UserContext1",
-    "type": "UserContext",
-    "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Point",
-            "coordinates": [
-                -4.754444444,
-                41.640833333
-            ]
-        }
-    },
-    "refActivity": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:Activity:UserActivity1"
-    },
-    "refUser": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:User:User1"
-    },
-    "refUserDevice": {
-        "type": "Relationship",
-        "object": "urn:ngsi-ld:UserDevice:Device1"
-    },
-    "@context": [
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
-    ]
+  "id": "urn:ngsi-ld:UserContext:UserContext1",
+  "type": "UserContext",
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+      "type": "Point",
+      "coordinates": [
+        -4.754444444,
+        41.640833333
+      ]
+    }
+  },
+  "refActivity": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:Activity:UserActivity1"
+  },
+  "refUser": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:User:User1"
+  },
+  "refUserDevice": {
+    "type": "Relationship",
+    "object": "urn:ngsi-ld:UserDevice:Device1"
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.User/master/context.jsonld"
+  ]
 }
